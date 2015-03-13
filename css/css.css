@@ -270,6 +270,9 @@ body {
   height: 50px;
   background-color: transparent;
   z-index: 999;
+  position: absolute;
+  top: 0;
+
 }
 
 #navigation .inner {
@@ -286,6 +289,7 @@ body {
 }
 
 #navigation.scrolled {
+  position: fixed;
   opacity: 1.0;
   filter: alpha(opacity=100);
   background-color: #222;
