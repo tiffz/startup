@@ -298,3 +298,11 @@ body {
 .container {
   padding-top: 60px;
 }
+
+#home {
+  background: url('../img/bg/1.jpg') center;
+}
+
+#home .site-wrapper-inner {
+  background: rgba(0, 0, 0, 0.5);
+}
