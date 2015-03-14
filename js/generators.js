@@ -1,3 +1,8 @@
+function random (seed) {
+    var x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
 function seedChoice (seed, choices) {
     return choices[Math.floor(random(seed) * choices.length)];
 }
@@ -38,6 +43,13 @@ function capitalizeFirst (word) {
 
 function getBackground (seed) {
 	return bgRoot + seedChoice(seed, backgrounds);
+}
+
+function getAlpha (seed, min, max) {
+  if (!min) min = 0;
+  if (!max) max = 1;
+  var ans = (min + (random(seed) * (max - min)));
+  return Math.floor(ans * 100) / 100;
 }
 
 function startupify (seed) {
