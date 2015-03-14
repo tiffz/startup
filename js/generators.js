@@ -44,3 +44,7 @@ function startupify (seed) {
     results.push(commonWord(seed) + "n");
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
+
+function threeVerbs (seed) {
+    return (capitalizeFirst(seedChoice(seed, inspVerbs)) + ". " + capitalizeFirst(seedChoice(seed + 1, inspVerbs)) + ". " + capitalizeFirst(seedChoice(seed + 2, inspVerbs)) + ".");
+}
