@@ -303,6 +303,11 @@ body {
   background: url('../img/bg/1.jpg') center;
 }
 
-#home .site-wrapper-inner {
+#home-content {
   background: rgba(0, 0, 0, 0.5);
+}
+
+#logo .a {
+  font-variant: small-caps;
+  letter-spacing: 1px;
 }
