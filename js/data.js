@@ -6,9 +6,9 @@ var backgrounds = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
 										"26.jpg", "27.jpg", "28.jpg", "29.jpg", "30.jpg",
 										"31.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", 
 										"36.jpg", "37.jpg", "38.jpg", "39.jpg", "40.jpg",
-										"41.jpg", "42.jpg"];
+										"41.jpg", "42.jpg", "43.jpg", "44.jpg"];
 										
-var navColors = ["#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71", 
+var mainColors = ["#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71", 
 									"#27ae60", "#e67e22", "#d35400", "#3498db", "#2980b9", 
 									"#e74c3c", "#c0392b", "#9b59b6", "#8e44ad", "#7f8c8d", 
 									"#2c3e50", "#34495e"];
