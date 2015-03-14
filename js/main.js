@@ -7,8 +7,8 @@ var seed = Math.floor(Math.random() * 10000000000);
 
 $(document).ready(function(){ 
 	var bg = getBackground(seed);
-	var name = startupify(seed + 1);
-    var slogan = threeVerbs(seed + 2);
+	var name = startupify(seed);
+    var slogan = makeSlogan(seed);
 	$("#home").css("background-image", "url('" + bg + "')");
 	$("#logo").html(name);
     $("#cover-heading").html(slogan);

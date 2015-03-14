@@ -2,6 +2,18 @@ function seedChoice (seed, choices) {
     return choices[Math.floor(random(seed) * choices.length)];
 }
 
+function someChoices(seed, choices, n) {
+    var newChoices = choices.slice();
+    var results = [];
+    while (n > 0) {
+        var index = Math.floor(random(seed + n) * newChoices.length);
+        results.push(newChoices[index]);
+        newChoices.splice(index, 1);
+        n--;
+    }
+    return results;
+}
+
 var bgRoot = "img/bg/";
 
 function verb (seed) {
@@ -29,7 +41,7 @@ function getBackground (seed) {
 }
 
 function startupify (seed) {
-    results = [];
+    var results = [];
     results.push(commonWord(seed) + "r");
     results.push(commonWord(seed) + "it");
     results.push(commonWord(seed) + "ly");
@@ -46,5 +58,13 @@ function startupify (seed) {
 }
 
 function threeVerbs (seed) {
-    return (capitalizeFirst(seedChoice(seed, inspVerbs)) + ". " + capitalizeFirst(seedChoice(seed + 1, inspVerbs)) + ". " + capitalizeFirst(seedChoice(seed + 2, inspVerbs)) + ".");
+    var resultList = someChoices(seed, inspVerbs, 3);
+    return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
+}
+
+function makeSlogan (seed) {
+    var results = [];
+    results.push(threeVerbs(seed));
+    results.push("We Are " + startupify(seed));
+    return seedChoice(seed, results);
 }
