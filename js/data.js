@@ -69,8 +69,8 @@ var glyphicons = ["glyphicon-asterisk", "glyphicon-cloud", "glyphicon-plus", "gl
 										"glyphicon-tree-deciduous", "glyphicon-cd", "glyphicon-equalizer", 
 										"glyphicon-king", "glyphicon-queen", "glyphicon-pawn", "glyphicon-bishop", 
 										"glyphicon-knight", "glyphicon-baby-formula", "glyphicon-tent", 
-										"glyphicon-apple", "glyphicon-hourglass", "glyphicon-lamp", "glyphicon-piggy-bank", 
-										"glyphicon-scissors", "glyphicon-scale", "glyphicon-ice-lolly", "glyphicon-ice-lolly-tasted",
+										"glyphicon-apple", "glyphicon-hourglass", "glyphicon-lamp", "glyphicon-scissors", 
+										"glyphicon-scale", "glyphicon-ice-lolly", "glyphicon-ice-lolly-tasted",
 										"glyphicon-education", "glyphicon-modal-window", "glyphicon-grain", "glyphicon-sunglasses"];
 
 var verbs = ["accept", "add", "admire", "admit", "advise", "afford", "agree", 
