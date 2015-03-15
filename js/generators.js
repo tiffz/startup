@@ -55,6 +55,10 @@ function getAlpha (seed, min, max) {
   return Math.floor(ans * 100) / 100;
 }
 
+function getColor (seed) {
+    return seedChoice(mainColors, seed);
+}
+
 function getLogo (seed) {
     var logo; 
     if (random(seed) < 0.5) {
