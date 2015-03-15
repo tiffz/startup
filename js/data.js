@@ -92,4 +92,15 @@ var nouns = ["people", "history", "way", "art", "world", "information", "map", "
 
 var inspVerbs = ["accomplish", "achieve", "act", "adventure", "appreciate", "attain", "believe", "build", "overcome", "challenge", "commit", "concentrate", "control", "conquer", "create", "dedicate", "desire", "determine", "dream", "drive", "empower", "encourage", "endure", "enjoy", "envision", "finish", "focus", "fulfill", "work", "harmonize", "honor", "hope", "humble", "imagine", "inspire", "know", "laugh", "learn", "journey", "love", "motivate", "overcome", "persevere", "persist", "plan", "prioritize", "reach", "satisfy", "succeed", "sustain", "teach", "trust", "value", "ignite", "grow", "invest", "benefit", "perform", "strike", "give", "earn", "change", "explore", "think", "analyze", "sweat", "devote"];
 
-var bizAdjs = ["fast", "simple", "secure", "real", "friendly", "efficient", "mobile", "responsive", "local", "national", "international", "worldwide", "open", "safe", "different", "more", "daring", "now", "accessible", "experienced", "driven", "responsible", "done", "right", "easy", "focused", "targeted", "motivated", "peerless", "persistant", "trusted", "earned", "reliable", "devoted", "unstoppable", "unyielding", "unforgiving", "able", "committed", "defined", "diverse", "connected", "selected", "tested", "agile", "flexible", "resilient", "active", "positive", "dedicated", "confident", "beautiful", "proactive", "diligent", "thorough", "prompt", "extensive", "innovative", "determined", "trustworthy", "loyal", "attentive", "dynamic", "aggressive", "consistent", "flawless", "organized", "professional", "skillful", "passionate", "alluring", "boundless", "brave", "bright", "capable", "cheerful", "coherent", "understandable", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "delightful", "detailed", "discreet", "enchanting", "exclusive", "fair", "faithful", "fearless", "knowledgeable", "mature", "modern", "perfect", "hip", "receptive", "resolute", "righteous", "sincere", "steadfast", "tough", "unbiased", "upbeat"];
+var bizAdjs = ["fast", "simple", "secure", "real", "friendly", "efficient", "mobile", "responsive", "open", "safe", "different", "more", "daring", "now", "accessible", "experienced", "driven", "responsible", "right", "easy", "focused", "targeted", "motivated", "peerless", "persistant", "trusted", "earned", "reliable", "devoted", "unstoppable", "unyielding", "unforgiving", "able", "committed", "defined", "diverse", "connected", "selected", "tested", "agile", "flexible", "resilient", "active", "positive", "dedicated", "confident", "beautiful", "proactive", "diligent", "thorough", "prompt", "extensive", "innovative", "determined", "trustworthy", "loyal", "attentive", "dynamic", "aggressive", "consistent", "flawless", "organized", "professional", "skillful", "passionate", "alluring", "boundless", "brave", "bright", "capable", "cheerful", "coherent", "understandable", "credible", "cultured", "dashing", "dazzling", "debonair", "decisive", "delightful", "detailed", "discreet", "enchanting", "exclusive", "fair", "faithful", "fearless", "knowledgeable", "mature", "modern", "perfect", "hip", "receptive", "resolute", "righteous", "sincere", "steadfast", "tough", "unbiased", "upbeat"];
+
+
+
+
+
+
+
+
+
+
+
