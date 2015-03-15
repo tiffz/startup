@@ -311,3 +311,8 @@ body {
   font-variant: small-caps;
   letter-spacing: 1px;
 }
+
+#team .team img {
+  width: 145px;
+  height: 145px;
+}

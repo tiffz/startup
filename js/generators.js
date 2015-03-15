@@ -3,6 +3,11 @@ function random (seed) {
     return x - Math.floor(x);
 }
 
+function randomInt (seed, max, min) {
+    if (!min) min = 0;
+    return min + Math.floor(random(seed) * (max - min + 1));
+}
+
 function seedChoice (seed, choices) {
     return choices[Math.floor(random(seed) * choices.length)];
 }
@@ -18,8 +23,6 @@ function someChoices(seed, choices, n) {
     }
     return results;
 }
-
-var bgRoot = "img/bg/";
 
 function verb (seed) {
     return seedChoice(seed, verbs);
@@ -50,6 +53,47 @@ function getAlpha (seed, min, max) {
   if (!max) max = 1;
   var ans = (min + (random(seed) * (max - min)));
   return Math.floor(ans * 100) / 100;
+}
+
+/**
+ * Returns an array of team member's photos and stuff. 
+ */
+function getTeam (seed) {
+    var ratio = Math.min(random(seed), random(seed * 2));
+    var size = randomInt(seed * 4, 2, 8); 
+    var girlCount = Math.floor(size * ratio);
+    var guyCount = size - girlCount;
+    var girls = someChoices(seed, females, girlCount);
+    var guys = someChoices(seed, males, guyCount);
+    var mult = 3;
+    var results = [];
+    var m = 0;
+    var f = 0;
+    while (m < guyCount || f < girlCount) {   
+        if (random(seed * mult + 1) > 0.5 && f < girlCount) {
+            // Add the next girl
+            var name = getFemaleName(seed * mult);
+            var photo = femaleRoot + girls[f];
+            results.push({'name': name, 'photo': photo});
+            f++;
+        } else if (m < guyCount) {
+            // Add the next guy
+            var name = getMaleName(seed * mult);
+            var photo = maleRoot + guys[m];
+            results.push({'name': name, 'photo': photo});
+            m++;
+        }
+        mult *= 3;
+    }
+    return results;
+}
+
+function getMaleName (seed) {
+    return "Adam Smith";
+}
+
+function getFemaleName (seed) {
+    return "Kayla McAllison";
 }
 
 function startupify (seed) {
