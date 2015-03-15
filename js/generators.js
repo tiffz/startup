@@ -52,6 +52,24 @@ function getAlpha (seed, min, max) {
   return Math.floor(ans * 100) / 100;
 }
 
+function removeLastVowel (seed) {
+    var word = commonWord(seed);
+    if (word.length <= 4) {
+        return word;
+    }
+    var lastVowel = -1;
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y') {
+            lastVowel = i;
+        }
+    }
+    if (lastVowel > -1) {
+        return word.slice(0, lastVowel) + word.slice(lastVowel + 1);
+    } else {
+        return word;
+    }
+}
+
 function startupify (seed) {
     var results = [];
     results.push(commonWord(seed) + "r");
@@ -63,9 +81,10 @@ function startupify (seed) {
     results.push(commonWord(seed));
     results.push(commonWord(seed) + "me");
     results.push("you" + commonWord(seed));
-    results.push(commonWord(seed) + "erific");
     results.push(commonWord(seed) + "rific");
     results.push(commonWord(seed) + "n");
+    results.push(commonWord(seed) + "str");
+    results.push(removeLastVowel(seed));
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
 
@@ -103,6 +122,14 @@ function worldsMost (seed) {
     }
 }
 
+function doSomethingGreat (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "The " + seedChoice(seed + 1, bizAdjs) + " " + noun(seed) + ".";
+    } else {
+        return capitalizeFirst(verb(seed)) + " something " + seedChoice(seed + 1, bizAdjs) + ".";
+    }
+}
+
 function makeSlogan (seed) {
     var results = [];
     results.push(threeVerbs(seed));
@@ -111,5 +138,11 @@ function makeSlogan (seed) {
     results.push(neverBefore(seed));
     results.push(worldsMost(seed));
     results.push("We Are " + startupify(seed) + ".");
-    return seedChoice(seed + 1, results);
+    results.push(doSomethingGreat(seed));
+    return seedChoice(seed + 1000, results);
 }
+
+
+
+
+
