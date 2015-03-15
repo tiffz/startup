@@ -6,7 +6,7 @@
   z-index: 999;
   position: absolute;
   top: 0;
-
+  border: none;
 }
 
 #navigation.top {

@@ -1,6 +1,6 @@
 var seed = Math.floor(Math.random() * 10000000000);
 
-
+var accent;
 
 $(document).ready(function() { 
 	var name = startupify(seed);
@@ -10,7 +10,7 @@ $(document).ready(function() {
   var shadowSize = randomInt(seed + 4, 300, 50);
   var slogan = makeSlogan(seed);
   var logo = getLogo(seed * 2);
-  var accent = getColor(seed * 4);
+  accent = getColor(seed * 4);
   
   var bgAlpha = getAlpha(seed * 9, 0.2, 0.6);
   var bgOverlay = "rgba(0, 0, 0, " + bgAlpha + ")";
