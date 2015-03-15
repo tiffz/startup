@@ -308,11 +308,15 @@ body {
 }
 
 #logo .a {
-  font-variant: small-caps;
-  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #team .team img {
   width: 145px;
   height: 145px;
+}
+
+#logo span, #logo i {
+  font-size: 25px;
 }

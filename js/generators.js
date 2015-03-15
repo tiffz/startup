@@ -55,6 +55,20 @@ function getAlpha (seed, min, max) {
   return Math.floor(ans * 100) / 100;
 }
 
+function getLogo (seed) {
+    var logo; 
+    if (random(seed) < 0.5) {
+        // Use Font Awesome
+        logo = seedChoice(seed, fontAwesome);
+        logo = '<i class="fa ' + logo + '"></i>';
+    } else {
+        // Use Glyphicons
+        logo = seedChoice(seed, glyphicons);
+        logo = '<span class="glyphicon ' + logo + '"></span>';
+    }
+    return logo;
+}
+
 /**
  * Returns an array of team member's photos and stuff. 
  */

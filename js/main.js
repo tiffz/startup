@@ -7,6 +7,7 @@ $(document).ready(function() {
   var bg = getBackground(seed + 1);
   var alpha = getAlpha(seed + 2, 0.2, 0.6);
   var slogan = makeSlogan(seed);
+  var logo = getLogo(seed);
 
   var team = getTeam(seed * 8);
   var i = 0;
@@ -25,6 +26,6 @@ $(document).ready(function() {
 
 	$("#home").css("background-image", "url('" + bg + "')");
   $("#home-content").css("background", "rgba(0, 0, 0, " + alpha + ")");
-	$("#logo").html(name);
+	$("#logo").html(logo + " " + name);
     $("#cover-heading").html(slogan);
 });
