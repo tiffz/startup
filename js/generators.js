@@ -154,7 +154,7 @@ function threeAdjs (seed) {
 
 function adjNoun (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
-        return "Your " + seedChoice(seed, bizAdjs) + " " + seedChoice(seed, nouns) + ".";
+        return "Your " + seedChoice(seed + 1, bizAdjs) + " " + seedChoice(seed, nouns) + ".";
     } else {
         return "Dare to " + commonWord(seed) + ".";
     }
@@ -170,9 +170,9 @@ function neverBefore (seed) {
 
 function worldsMost (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
-        return "World's most " + seedChoice(seed, bizAdjs) + " " + noun(seed) + ".";
+        return "World's most " + seedChoice(seed + 1, bizAdjs) + " " + noun(seed) + ".";
     } else {
-        return "The " + seedChoice(seed, bizAdjs) + " way to " + verb(seed) + ".";
+        return "The " + seedChoice(seed + 1, bizAdjs) + " way to " + verb(seed) + ".";
     }
 }
 
@@ -184,6 +184,34 @@ function doSomethingGreat (seed) {
     }
 }
 
+function aShift (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Your " + seedChoice(seed + 1, bizAdjs) + " new " + noun(seed) + ".";
+    } else {
+        return "We " + verb(seed) + ".";
+    }
+}
+
+function madeEasy (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "The evolution of the " + noun(seed) + ".";
+    } else {
+        return "For those who " + verb(seed) + ".";
+    }
+}
+
+function doYou (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Your " + noun(seed) + ". " + capitalizeFirst(seedChoice(seed + 1, bizAdjs)) + ".";
+    } else {
+        return "Do you " + verb(seed) + "?";
+    }
+}
+
+
+//do you verb?
+//verb noun. verb noun. site verb site noun.
+
 function makeSlogan (seed) {
     var results = [];
     results.push(threeVerbs(seed));
@@ -193,6 +221,10 @@ function makeSlogan (seed) {
     results.push(worldsMost(seed));
     results.push("We Are " + startupify(seed) + ".");
     results.push(doSomethingGreat(seed));
+    results.push(aShift(seed));
+    results.push(madeEasy(seed));
+    results.push("Meet " + startupify(seed) + ".");
+    results.push(doYou(seed));
     return seedChoice(seed + 1000, results);
 }
 
