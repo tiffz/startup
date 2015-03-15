@@ -72,13 +72,13 @@ function getTeam (seed) {
     while (m < guyCount || f < girlCount) {   
         if (random(seed * mult + 1) > 0.5 && f < girlCount) {
             // Add the next girl
-            var name = getFemaleName(seed * mult);
+            var name = femaleName(seed * mult) + " " + lastName(seed * mult + 2);
             var photo = femaleRoot + girls[f];
             results.push({'name': name, 'photo': photo});
             f++;
         } else if (m < guyCount) {
             // Add the next guy
-            var name = getMaleName(seed * mult);
+            var name = maleName(seed * mult) + " " + lastName(seed * mult + 2);
             var photo = maleRoot + guys[m];
             results.push({'name': name, 'photo': photo});
             m++;
@@ -86,14 +86,6 @@ function getTeam (seed) {
         mult *= 3;
     }
     return results;
-}
-
-function getMaleName (seed) {
-    return "Adam Smith";
-}
-
-function getFemaleName (seed) {
-    return "Kayla McAllison";
 }
 
 function removeLastVowel (seed) {
@@ -186,7 +178,33 @@ function makeSlogan (seed) {
     return seedChoice(seed + 1000, results);
 }
 
+function maleName (seed) {
+    var total = random(seed) * maleNameTotal;
+    var i = 0;
+    while (total > 0) {
+        total -= maleWeights[i];
+        i++
+    }
+    return maleNames[i];
+}
 
+function femaleName (seed) {
+    var total = random(seed) * femaleNameTotal;
+    var i = 0;
+    while (total > 0) {
+        total -= femaleWeights[i];
+        i++
+    }
+    return femaleNames[i];
+}
 
-
+function lastName (seed) {
+    var total = random(seed) * lastNameTotal;
+    var i = 0;
+    while (total > 0) {
+        total -= lastWeights[i];
+        i++
+    }
+    return lastNames[i];
+}
 
