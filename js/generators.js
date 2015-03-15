@@ -74,9 +74,15 @@ function threeVerbs (seed) {
     return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
 }
 
+function threeAdjs (seed) {
+    var resultList = someChoices(seed, bizAdjs, 3);
+    return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
+}
+
 function makeSlogan (seed) {
     var results = [];
     results.push(threeVerbs(seed));
+    results.push(threeAdjs(seed));
     results.push("We Are " + startupify(seed));
     return seedChoice(seed, results);
 }
