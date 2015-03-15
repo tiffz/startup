@@ -56,7 +56,7 @@ function getAlpha (seed, min, max) {
 }
 
 function getColor (seed) {
-    return seedChoice(mainColors, seed);
+    return seedChoice(seed, mainColors);
 }
 
 function getLogo (seed) {
