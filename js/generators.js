@@ -74,9 +74,42 @@ function threeVerbs (seed) {
     return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
 }
 
+function threeAdjs (seed) {
+    var resultList = someChoices(seed, bizAdjs, 3);
+    return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
+}
+
+function adjNoun (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Your " + seedChoice(seed, bizAdjs) + " " + seedChoice(seed, nouns) + ".";
+    } else {
+        return "Dare to " + commonWord(seed) + ".";
+    }
+}
+
+function neverBefore (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Like no other " + noun(seed) + ".";
+    } else {
+        return capitalizeFirst(commonWord(seed)) + " like never before.";
+    }
+}
+
+function worldsMost (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "World's most " + seedChoice(seed, bizAdjs) + " " + noun(seed) + ".";
+    } else {
+        return "The " + seedChoice(seed, bizAdjs) + " way to " + verb(seed) + ".";
+    }
+}
+
 function makeSlogan (seed) {
     var results = [];
     results.push(threeVerbs(seed));
-    results.push("We Are " + startupify(seed));
-    return seedChoice(seed, results);
+    results.push(threeAdjs(seed));
+    results.push(adjNoun(seed));
+    results.push(neverBefore(seed));
+    results.push(worldsMost(seed));
+    results.push("We Are " + startupify(seed) + ".");
+    return seedChoice(seed + 1, results);
 }

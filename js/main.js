@@ -6,8 +6,8 @@ $(document).ready(function() {
 	var name = startupify(seed);
   var bg = getBackground(seed + 1);
   var alpha = getAlpha(seed + 2, 0.2, 0.6);
-  var slogan = threeVerbs(seed + 3);
-  
+  var slogan = makeSlogan(seed);
+
 	$("#home").css("background-image", "url('" + bg + "')");
   $("#home-content").css("background", "rgba(0, 0, 0, " + alpha + ")");
 	$("#logo").html(name);
