@@ -147,6 +147,7 @@ function startupify (seed) {
     results.push(commonWord(seed) + "in");
     results.push(commonWord(seed) + "able");
     results.push("Smart" + commonWord(seed));
+    results.push(commonWord(seed) + capitalizeFirst(commonWord(seed + 1)));
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
 
@@ -225,10 +226,18 @@ function youllNever (seed) {
     }
 }
 
+function doMore (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "The " + noun(seed) + " you've been waiting for.";
+    } else {
+        return "Start " + seedChoice(seed, gerunds) + ".";
+    }
+}
+
 //verb noun. verb noun. site verb site noun.
 
 function makeSlogan (seed) {
-    var results = [];
+    var results = [];/*
     results.push(threeVerbs(seed));
     results.push(threeAdjs(seed));
     results.push(adjNoun(seed));
@@ -240,7 +249,8 @@ function makeSlogan (seed) {
     results.push(madeEasy(seed));
     results.push("Meet " + startupify(seed) + ".");
     results.push(doYou(seed));
-    results.push(youllNever(seed));
+    results.push(youllNever(seed));*/
+    results.push(doMore(seed));
     return seedChoice(seed + 1000, results);
 }
 
