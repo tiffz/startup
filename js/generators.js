@@ -83,6 +83,7 @@ function getTeam (seed) {
     var guyCount = size - girlCount;
     var girls = someChoices(seed, females, girlCount);
     var guys = someChoices(seed, males, guyCount);
+    var jobs = someChoices(seed + 1, titles, girlCount + guyCount);
     var mult = 3;
     var results = [];
     var m = 0;
@@ -92,13 +93,15 @@ function getTeam (seed) {
             // Add the next girl
             var name = femaleName(seed * mult) + " " + lastName(seed * mult + 2);
             var photo = femaleRoot + girls[f];
-            results.push({'name': name, 'photo': photo});
+            var job = jobs[m + f];
+            results.push({'name': name, 'photo': photo, 'job': job});
             f++;
         } else if (m < guyCount) {
             // Add the next guy
             var name = maleName(seed * mult) + " " + lastName(seed * mult + 2);
             var photo = maleRoot + guys[m];
-            results.push({'name': name, 'photo': photo});
+            var job = jobs[m + f];
+            results.push({'name': name, 'photo': photo, 'job': job});
             m++;
         }
         mult *= 3;
@@ -113,7 +116,7 @@ function removeLastVowel (seed) {
     }
     var lastVowel = -1;
     for (var i = 0; i < word.length; i++) {
-        if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y') {
+        if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u') {
             lastVowel = i;
         }
     }
@@ -139,6 +142,11 @@ function startupify (seed) {
     results.push(commonWord(seed) + "n");
     results.push(commonWord(seed) + "str");
     results.push(removeLastVowel(seed));
+    results.push(commonWord(seed) + "Now");
+    results.push(commonWord(seed) + "Link");
+    results.push(commonWord(seed) + "in");
+    results.push(commonWord(seed) + "able");
+    results.push("Smart" + commonWord(seed));
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
 
@@ -208,8 +216,15 @@ function doYou (seed) {
     }
 }
 
+function youllNever (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "The " + noun(seed) + " you've been waiting for.";
+    } else {
+        var resultList = someChoices(seed, inspVerbs, 2);
+        return  capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(verb(seed)) + ".";
+    }
+}
 
-//do you verb?
 //verb noun. verb noun. site verb site noun.
 
 function makeSlogan (seed) {
@@ -225,6 +240,7 @@ function makeSlogan (seed) {
     results.push(madeEasy(seed));
     results.push("Meet " + startupify(seed) + ".");
     results.push(doYou(seed));
+    results.push(youllNever(seed));
     return seedChoice(seed + 1000, results);
 }
 
@@ -257,4 +273,3 @@ function lastName (seed) {
     }
     return lastNames[i];
 }
-
