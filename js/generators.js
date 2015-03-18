@@ -237,7 +237,7 @@ function doMore (seed) {
 //verb noun. verb noun. site verb site noun.
 
 function makeSlogan (seed) {
-    var results = [];/*
+    var results = [];
     results.push(threeVerbs(seed));
     results.push(threeAdjs(seed));
     results.push(adjNoun(seed));
@@ -249,7 +249,7 @@ function makeSlogan (seed) {
     results.push(madeEasy(seed));
     results.push("Meet " + startupify(seed) + ".");
     results.push(doYou(seed));
-    results.push(youllNever(seed));*/
+    results.push(youllNever(seed));
     results.push(doMore(seed));
     return seedChoice(seed + 1000, results);
 }
