@@ -25,7 +25,7 @@ $(document).ready(function() {
       var member = team[i];
       $(this).find("img").attr("src", member.photo);
       $(this).find("h2").html(member.name);
-      $(this).find("p").html(member.name);
+      $(this).find("p").html(member.job);
       i++;
     } else {
       $(this).hide();
