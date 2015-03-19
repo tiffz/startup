@@ -348,5 +348,20 @@ function makeOpener (seed) {
     return seedChoice(seed + 999, results);;
 }
 
-
+function makeSubDescs (seed) {
+    var results = [];
+    results.push("What makes " + startupify(seed) + " *? Our commitment to + pursuing excellence at every turn.");
+    results.push("You know what you want, something * that doesn't hold you back. With the latest * technologies, " + startupify(seed) + " has your back.");
+    results.push("Unlike our competitors, we'll always be + looking for new ways to move forward.");
+    results.push(startupify(seed) + " is * from the ground up. We have * products, * prices, and most of all * service.");
+    results.push(startupify(seed) + " is a different kind of startup. We know what it means to be * and will never compromise when it comes to + delivering what you need.");
+    results.push("Includes everything you need, find and buy in a truly * manner.");
+    results.push("Our completely * calculator ensures you'll never overpay.");
+    results.push("Fits you and your * lifestyle.");
+    results.push("Get a complete picture of the * landscape in as little as 60 seconds.");
+    results.push("Optimize your changes for a truly * impact.");
+    results.push("Be the first to see * news in your area.");
+    results.push(startupify(seed) + " is inherently * and community centric. It's time for the * community to have a voice.");
+    return someChoices(seed + 11, results, 3);
+}
 

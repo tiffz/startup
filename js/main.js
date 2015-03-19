@@ -13,6 +13,7 @@ $(document).ready(function() {
   var slogan = makeSlogan(seed);
   var subHeadings = someChoices(seed, bizAdjs, 3);
   var subHeadingAdvbs = someChoices(seed, bizAdvbs, 3);
+  var subDescs = makeSubDescs(seed);
   var openerText = makeOpener(seed);
   var logo = getLogo(seed * 2);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
@@ -142,4 +143,7 @@ $(document).ready(function() {
   $("#subHeading1").html(capitalizeFirst(subHeadings[0]));
   $("#subHeading2").html(capitalizeFirst(subHeadings[1]));
   $("#subHeading3").html(capitalizeFirst(subHeadings[2]));
+  $("#subDesc1").html(subDescs[0].replace(/\*/g, subHeadings[0]).replace(/\+/g, subHeadingAdvbs[0]));
+  $("#subDesc2").html(subDescs[1].replace(/\*/g, subHeadings[1]).replace(/\+/g, subHeadingAdvbs[1]));
+  $("#subDesc3").html(subDescs[2].replace(/\*/g, subHeadings[2]).replace(/\+/g, subHeadingAdvbs[2]));
 });
