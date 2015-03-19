@@ -26,6 +26,8 @@ $(document).ready(function() {
   var headerFont = getFont(seed * 7);
   var font = getFont(seed * 11);
 
+  document.title = name;
+
   $("body").css("font-family", font);
 
   $("#cover-heading").css("font-family", headerFont);
