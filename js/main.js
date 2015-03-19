@@ -25,9 +25,6 @@ $(document).ready(function() {
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getFont(seed * 7);
   var font = getFont(seed * 11);
-  if (slogan.length > 35) {
-      font = getFont(seed * 5);
-  }
 
   document.title = name ;
 
@@ -69,7 +66,7 @@ $(document).ready(function() {
   	}
   	$("#home-text-wrapper").css("margin-top", "30px")
   } else if (seedChance(seed * 243 * 9, 0.6)) {
-  	var stripAlpha = getAlpha(seed * 243 * 243 * 3, 0, 0.4);
+  	var stripAlpha = getAlpha(seed * 243 * 243 * 3, 0, 0.3);
   	$("#home-text-wrapper").css("background-color", setAlpha("#ffffff", stripAlpha));
   	$("#home-text-wrapper").css("padding", "15px 0");
   }
