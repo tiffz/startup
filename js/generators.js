@@ -295,3 +295,24 @@ function lastName (seed) {
     }
     return lastNames[i];
 }
+function isRevo (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + "."
+    } else {
+        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you."
+    }
+}
+
+function isLever (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + "."
+    } else {
+        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you."
+    }
+}
+
+function makeOpener (seed) {
+    var results = [];
+    results.push(isRevo(seed));
+    return seedChoice(seed + 999, results);;
+}

@@ -9,6 +9,7 @@ $(document).ready(function() {
   var shadowAlpha = getAlpha(seed + 3, 0.3, 0.8);
   var shadowSize = randomInt(seed + 4, 300, 50);
   var slogan = makeSlogan(seed);
+  var openerText = makeOpener(seed);
   var logo = getLogo(seed * 2);
   accent = getColor(seed * 4);
 
@@ -59,5 +60,6 @@ $(document).ready(function() {
 
   $("#navigation").css("background", accent);
 	$("#logo").html(logo + " " + name);
-    $("#cover-heading").html(slogan);
+  $("#cover-heading").html(slogan);
+  $("#opener").html(openerText);
 });
