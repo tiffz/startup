@@ -16,6 +16,32 @@ $(document).ready(function() {
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
   accent = getColor(seed * 4);
   navTop = setAlpha(accent, 0);
+  var headerSize = Math.max(randomInt(seed * 3 + 1, 11, 4), 
+  	randomInt(seed * 3 + 2, 11, 4));
+  var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
+  	randomInt(seed * 5 + 2, 11, 1));
+  var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
+  $("#cover-heading").css("font-size",  headerSize + "rem");
+  $("#cover-heading").css("font-weight",  headerWeight * 100);
+  $("#cover-heading").css("letter-spacing",  headerSpacing);
+
+  if (seedChance(seed * 3 + 17, 0.5)) {
+  	$("#opener").css("font-weight", "bold");
+	}
+
+	if (seedChance(seed * 5 + 17, 0.1)) {
+		$("#cover-heading").css("font-style",  "italic");
+	}
+
+	if (seedChance(seed * 5 + 18, 0.1)) {
+		$("#cover-heading").css("text-transform",  "lowercase");
+	} else if (seedChance(seed * 5 + 18, 0.2)) {
+		$("#cover-heading").css("text-transform",  "capitalize");
+	} else if (seedChance(seed * 5 + 18, 0.3)) {
+		$("#cover-heading").css("text-transform",  "capitalize");
+		$("#cover-heading").css("font-variant",  "small-caps");
+	}
+
 
   $(".btn-default").css("background-color", accent);
 
