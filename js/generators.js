@@ -52,6 +52,15 @@ function getBackground (seed) {
 	return bgRoot + seedChoice(seed, backgrounds);
 }
 
+function getFont (seed) {
+    var f = someChoices(seed, fonts, 5);
+    var res = f[0];
+    for (var i = 1; i < f.length; i++) {
+        res = res + ", " + f[i];
+    }
+    return res;
+}
+
 function getAlpha (seed, min, max) {
   if (!min) min = 0;
   if (!max) max = 1;
