@@ -92,3 +92,21 @@
 #logo span, #logo i {
   font-size: 25px;
 }
+
+#home-text {
+  width: 60%;
+  margin: 0 20%;
+}
+
+#home-text p {
+  width: 100%;
+}
+
+#cover-heading {
+  font-size: 10rem;
+  line-height: 0.85em;
+  font-family: 'Gotham', 'Source Sans Pro', 'Arial Black', Avenir, Roboto;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+}
