@@ -63,10 +63,28 @@
 }
 
 #home nav {
-  font-size: 1rem;
-  letter-spacing: 1px;
   box-shadow: none;
   z-index: 9999;
+}
+
+#home nav a {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0px;
+  line-height: 42px;
+  padding: 3px 8px;
+  font-size: 1em;
+  letter-spacing: 0.1px;
+  border: none;
+  font-weight: normal;
+}
+
+#home nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#home nav li {
+  margin: 0px 2px;
 }
 
 #home .before {
@@ -89,9 +107,11 @@
   z-index: 10;
 }
 
-#logo .a {
+#logo {
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: -0.5px;
 }
 
 #team .team img {
@@ -112,8 +132,8 @@
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
-  line-height: 1.4em;
-  font-size: 1.2em;
+  line-height: 1.5em;
+  font-size: 1.3em;
 }
 
 #cover-heading {

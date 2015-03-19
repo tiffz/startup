@@ -18,13 +18,17 @@ $(document).ready(function() {
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
   accent = getColor(seed * 4);
   navTop = setAlpha(accent, 0);
-  var headerSize = Math.max(randomInt(seed * 3 + 1, 10, 4), 
-  	randomInt(seed * 3 + 2, 9, 4));
+  var headerSize = Math.max(randomInt(seed * 3 + 1, 12, 4), 
+  	randomInt(seed * 3 + 2, 12, 4));
   var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
   	randomInt(seed * 5 + 2, 11, 1));
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getFont(seed * 7);
   var font = getFont(seed * 11);
+
+  if (slogan.length > 20) {
+      headerSize = randomInt(seed * 11, 8, 4);
+  }
 
   document.title = name ;
 
@@ -55,6 +59,7 @@ $(document).ready(function() {
 
   $(".btn-default").css("background-color", accent);
 
+  $("#home-text-wrapper").css("margin-top", "20px");
   if (navColoredAtTop) {
   	var navAlpha = getAlpha(seed * 243 * 243 * 9, 0.8, 1);
   	if (seedChance(seed * 243 * 243 * 3, 0.3)) {
@@ -64,7 +69,7 @@ $(document).ready(function() {
   		navTop = setAlpha("#ffffff", navAlpha);
   		topColor = darkenColor(accent, randomInt(seed * 243 * 243 * 27, 80), navAlpha);
   	}
-  	$("#home-text-wrapper").css("margin-top", "30px")
+  	$("#home-text-wrapper").css("margin-top", "50px");
   } else if (seedChance(seed * 243 * 9, 0.6)) {
   	var stripAlpha = getAlpha(seed * 243 * 243 * 3, 0, 0.3);
   	$("#home-text-wrapper").css("background-color", setAlpha("#ffffff", stripAlpha));
