@@ -237,7 +237,15 @@ function doMore (seed) {
     }
 }
 
-//verb noun. verb noun. site verb site noun.
+function ally (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return capitalizeFirst(seedChoice(seed + 1, inspGerunds)) + " your " + seedChoice(seed, nouns) + ".";
+    } else {
+        return capitalizeFirst(seedChoice(seed + 1, bizAdvbs)) + " " + seedChoice(seed, gerunds) + ".";
+    }
+}
+
+
 
 function makeSlogan (seed) {
     var results = [];
@@ -254,6 +262,7 @@ function makeSlogan (seed) {
     results.push(doYou(seed));
     results.push(youllNever(seed));
     results.push(doMore(seed));
+    results.push(ally(seed));
     return seedChoice(seed + 1000, results);
 }
 
