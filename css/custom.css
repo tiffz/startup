@@ -36,6 +36,7 @@
 #navigation.top {
   background-color: rgba(0,0,0,0) transparent !important;
   height: 100px;
+  z-index: 9999;
 }
 
 #navigation .inner {
@@ -65,6 +66,7 @@
   font-size: 1rem;
   letter-spacing: 1px;
   box-shadow: none;
+  z-index: 9999;
 }
 
 #home .before {

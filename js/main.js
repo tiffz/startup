@@ -18,15 +18,15 @@ $(document).ready(function() {
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
   accent = getColor(seed * 4);
   navTop = setAlpha(accent, 0);
-  var headerSize = Math.max(randomInt(seed * 3 + 1, 11, 4), 
-  	randomInt(seed * 3 + 2, 11, 4));
+  var headerSize = Math.max(randomInt(seed * 3 + 1, 10, 4), 
+  	randomInt(seed * 3 + 2, 9, 4));
   var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
   	randomInt(seed * 5 + 2, 11, 1));
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getFont(seed * 7);
   var font = getFont(seed * 11);
 
-  document.title = name;
+  document.title = name ;
 
   $("body").css("font-family", font);
 
