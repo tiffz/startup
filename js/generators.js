@@ -302,7 +302,7 @@ function isRevo (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
         return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + ".";
     } else {
-        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you.";
+        return startupify(seed) + " is why you'll never " + seedChoice(seed, verbs) + " the same way again.";
     }
 }
 
@@ -338,3 +338,6 @@ function makeOpener (seed) {
     results.push(theMax(seed));
     return seedChoice(seed + 999, results);;
 }
+
+
+
