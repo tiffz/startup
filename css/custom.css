@@ -3,6 +3,7 @@
   border: none;
   box-shadow: none;
   color: #fff;
+  font-size: 1em;
 }
 
 .btn-default:hover, .btn:hover {
@@ -21,6 +22,10 @@
   border-radius: 0 !important;
 }
 
+#navigation {
+  text-shadow: none;
+}
+
 #navigation.top {
   position: absolute;
   top: 0;
@@ -30,6 +35,7 @@
 
 #navigation.top {
   background-color: rgba(0,0,0,0) transparent !important;
+  height: 100px;
 }
 
 #navigation .inner {
@@ -55,8 +61,10 @@
   padding-top: 60px;
 }
 
-#home {
-  /*background: url('../img/bg/1.jpg') center fixed;*/
+#home nav {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: none;
 }
 
 #home .before {
