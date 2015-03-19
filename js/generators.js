@@ -142,7 +142,6 @@ function startupify (seed) {
     results.push(commonWord(seed));
     results.push(commonWord(seed) + "me");
     results.push("you" + commonWord(seed));
-    results.push(commonWord(seed) + "rific");
     results.push(commonWord(seed) + "n");
     results.push(commonWord(seed) + "str");
     results.push(removeLastVowel(seed));
@@ -151,6 +150,7 @@ function startupify (seed) {
     results.push(commonWord(seed) + "in");
     results.push(commonWord(seed) + "able");
     results.push("Smart" + commonWord(seed));
+    results.push(commonWord(seed) + capitalizeFirst(commonWord(seed + 1)));
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
 
@@ -229,6 +229,14 @@ function youllNever (seed) {
     }
 }
 
+function doMore (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return capitalizeFirst(seedChoice(seed + 1, inspVerbs)) + " your " + noun(seed) + ".";
+    } else {
+        return "Start " + seedChoice(seed, gerunds) + ".";
+    }
+}
+
 //verb noun. verb noun. site verb site noun.
 
 function makeSlogan (seed) {
@@ -245,6 +253,7 @@ function makeSlogan (seed) {
     results.push("Meet " + startupify(seed) + ".");
     results.push(doYou(seed));
     results.push(youllNever(seed));
+    results.push(doMore(seed));
     return seedChoice(seed + 1000, results);
 }
 
