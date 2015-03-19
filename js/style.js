@@ -2,6 +2,9 @@ $(document).ready(function(){
    var scrollStart = 0;
    var startChange = $('#cover-heading');
    var offset = startChange.offset();
+
+   $(".btn-default").css("background-color", setAlpha(accent, 1));
+
    function checkScroll() { 
     scrollStart = $(this).scrollTop();
     if(scrollStart > offset.top) {

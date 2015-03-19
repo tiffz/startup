@@ -1,8 +1,27 @@
+.btn-default, .btn {
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+}
+
+.btn-default:hover, .btn:hover {
+  border: none;
+  background-color: #222;
+  color: #fff;
+}
+
 #navigation {
   width: 100%;
   height: 50px;
   background-color: #222222;
   z-index: 999;
+  top: 0;
+  border: none;
+  border-radius: 0 !important;
+}
+
+#navigation.top {
   position: absolute;
   top: 0;
   border: none;
@@ -37,11 +56,27 @@
 }
 
 #home {
-  background: url('../img/bg/1.jpg') center fixed;
+  /*background: url('../img/bg/1.jpg') center fixed;*/
+}
+
+#home .before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: url('../img/bg/1.jpg') center fixed;
+    z-index: 0;
 }
 
 #home-content {
   background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  position: relative;
+}
+
+#home-content .cover-container {
+  z-index: 10;
 }
 
 #logo .a {

@@ -40,6 +40,10 @@ function commonWord (seed) {
     }
 }
 
+function seedChance (seed, chance) {
+    return random(seed) < chance;
+}
+
 function capitalizeFirst (word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
