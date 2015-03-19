@@ -11,6 +11,8 @@ $(document).ready(function() {
   var shadowAlpha = getAlpha(seed + 3, 0.3, 0.8);
   var shadowSize = randomInt(seed + 4, 300, 50);
   var slogan = makeSlogan(seed);
+  var subHeadings = someChoices(seed, bizAdjs, 3);
+  var subHeadingAdvbs = someChoices(seed, bizAdvbs, 3);
   var openerText = makeOpener(seed);
   var logo = getLogo(seed * 2);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
@@ -132,4 +134,7 @@ $(document).ready(function() {
 	$("#logo").html(logo + " " + name);
   $("#cover-heading").html(slogan);
   $("#opener").html(openerText);
+  $("#subHeading1").html(capitalizeFirst(subHeadings[0]));
+  $("#subHeading2").html(capitalizeFirst(subHeadings[1]));
+  $("#subHeading3").html(capitalizeFirst(subHeadings[2]));
 });
