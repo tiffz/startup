@@ -53,7 +53,17 @@ var mainColors = ["#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71",
 									"#e74c3c", "#c0392b", "#9b59b6", "#0153B6", "#844ED7",
 									"#FBA30C", "#09B729", "#CF5BA8", "#DB1B13", "#37C0EF", 
 									"#AB5B98", "#330DAB", "#1DCB23", "#3C9AF6", "#2CDCEC",
-									"#1CE225"];
+									"#1CE225", "#D96D88", "#4924C8", "#F26B72", "#A4698A",
+									"#1BDC5E", "#5C049C", "#0408A4", "#70A60A", "#219323",
+									"#06BE15", "#09B7AB", "#1D64A6", "#CB009C", "#873DF8",
+									"#845A0E", "#A40221", "#970744", "#B3AD02", "#F48232", 
+									"#FE9E00", "#8B851E", "#B9B30C", "#FD2C5C", "#29C0AF",
+									"#824C52", "#13326D", "#65CF13", "#9E0E2B"];
+
+var fonts = ["Gadget", "Helvetica", "Arial", "'Arial Black'",
+							"Impact", "Charcoal", "'Lucida Sans Unicode'", "'Lucida Grande'", 
+							"Tahoma", "Geneva", "Verdana", "Roboto", "'Source Sans Pro'", 
+							"'Open Sans'", "Lato", "Oswald", "Lora"];
 
 var fontAwesome = ["fa-adn", "fa-anchor", "fa-ambulance", "fa-archive", "fa-area-chart", 
 										"fa-asterisk", "fa-automobile", "fa-bank", "fa-bell", "fa-bicycle", 

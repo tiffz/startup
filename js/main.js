@@ -23,9 +23,15 @@ $(document).ready(function() {
   var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
   	randomInt(seed * 5 + 2, 11, 1));
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
-  $("#cover-heading").css("font-size",  headerSize + "rem");
-  $("#cover-heading").css("font-weight",  headerWeight * 100);
-  $("#cover-heading").css("letter-spacing",  headerSpacing);
+  var headerFont = getFont(seed * 7);
+  var font = getFont(seed * 11);
+
+  $("body").css("font-family", font);
+
+  $("#cover-heading").css("font-family", headerFont);
+  $("#cover-heading").css("font-size", headerSize + "rem");
+  $("#cover-heading").css("font-weight", headerWeight * 100);
+  $("#cover-heading").css("letter-spacing", headerSpacing);
 
   if (seedChance(seed * 3 + 17, 0.5)) {
   	$("#opener").css("font-weight", "bold");
@@ -39,7 +45,7 @@ $(document).ready(function() {
 		$("#cover-heading").css("text-transform",  "lowercase");
 	} else if (seedChance(seed * 5 + 18, 0.2)) {
 		$("#cover-heading").css("text-transform",  "capitalize");
-	} else if (seedChance(seed * 5 + 18, 0.3)) {
+	} else if (seedChance(seed * 5 + 18, 0.25)) {
 		$("#cover-heading").css("text-transform",  "capitalize");
 		$("#cover-heading").css("font-variant",  "small-caps");
 	}
