@@ -138,7 +138,6 @@ function startupify (seed) {
     results.push(commonWord(seed));
     results.push(commonWord(seed) + "me");
     results.push("you" + commonWord(seed));
-    results.push(commonWord(seed) + "rific");
     results.push(commonWord(seed) + "n");
     results.push(commonWord(seed) + "str");
     results.push(removeLastVowel(seed));
@@ -228,7 +227,7 @@ function youllNever (seed) {
 
 function doMore (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
-        return "The " + noun(seed) + " you've been waiting for.";
+        return capitalizeFirst(seedChoice(seed + 1, inspVerbs)) + " your " + noun(seed) + ".";
     } else {
         return "Start " + seedChoice(seed, gerunds) + ".";
     }
