@@ -154,6 +154,7 @@ function startupify (seed) {
     return capitalizeFirst(seedChoice(seed + 1, results));
 }
 
+//Here are functions to make slogans
 function threeVerbs (seed) {
     var resultList = someChoices(seed, inspVerbs, 3);
     return (capitalizeFirst(resultList[0]) + ". " + capitalizeFirst(resultList[1]) + ". " + capitalizeFirst(resultList[2]) + ".");
@@ -295,24 +296,45 @@ function lastName (seed) {
     }
     return lastNames[i];
 }
+
+//Here are functions to make openers
 function isRevo (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
-        return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + "."
+        return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + ".";
     } else {
-        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you."
+        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you.";
     }
 }
 
-function isLever (seed) {
+function isLocal (seed) {
     if (seedChoice(seed, nouns) == commonWord(seed)) {
-        return startupify(seed) + " is revolutionizing the way people think about " + seedChoice(seed, plurals) + "."
+        return startupify(seed) + " was created to help you find " + seedChoice(seed, plurals) + " in your area. From local " + seedChoice(seed, plurals) + " to national brands, no one knows " + seedChoice(seed, plurals) + " like " + startupify(seed) + ". No one.";
     } else {
-        return startupify(seed) + " replaces manual " + seedChoice(seed, gerunds) + " with an automated marketplace that matches businesses with customers. We eliminate waste and pass the savings to you."
+        return startupify(seed) + " is a place for people who enjoy " + seedChoice(seed, gerunds) + " to connect. Find local " + seedChoice(seed, gerunds) + " events or just share your favorite tips and stories with others who love to " + seedChoice(seed, verbs) + ".";
+    }
+}
+
+function shareAnd (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Share your favorite " + seedChoice(seed, plurals) + " and discover new ones. With " + startupify(seed) + " you never know what you might find!";
+    } else {
+        return startupify(seed) + " was founded by people who love " + seedChoice(seed, gerunds) + " just like you! Enter your favorite ways to " + seedChoice(seed, verbs) + " and we'll help you fit it all in. Since we're using " + seedChoice(seed, bizAdjs) + " technologies, you can count on us next time you " + seedChoice(seed, verbs) + ".";
+    }
+}
+
+function theMax (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is the last word in " + seedChoice(seed, bizAdjs) + " " + seedChoice(seed, plurals) + ". We know you never settle for less than the best and neither do we. " + capitalizeFirst(seedChoice(seed, inspVerbs)) + " with professional grade tools and " + seedChoice(seed + 1, inspVerbs) + " your future.";
+    } else {
+        return capitalizeFirst(seedChoice(seed, gerunds)) + ". Everyone talks about it but only the truly " + seedChoice(seed, bizAdjs) + " are able to " + seedChoice(seed, verbs) + " day in and day out. Here at " + startupify(seed) + " we understand your commitment and want to give you what you need to take your " + seedChoice(seed, gerunds) + " to the next level.";
     }
 }
 
 function makeOpener (seed) {
     var results = [];
     results.push(isRevo(seed));
+    results.push(isLocal(seed));
+    results.push(shareAnd(seed));
+    results.push(theMax(seed));
     return seedChoice(seed + 999, results);;
 }
