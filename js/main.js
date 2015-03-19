@@ -12,6 +12,7 @@ $(document).ready(function() {
   var shadowSize = randomInt(seed + 4, 300, 50);
   var slogan = makeSlogan(seed);
   var subHeadings = someChoices(seed, bizAdjs, 3);
+  var subHeadingAdvbs = someChoices(seed, bizAdvbs, 3);
   var openerText = makeOpener(seed);
   var logo = getLogo(seed * 2);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
