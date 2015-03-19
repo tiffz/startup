@@ -25,6 +25,9 @@ $(document).ready(function() {
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getFont(seed * 7);
   var font = getFont(seed * 11);
+  if (slogan.length > 35) {
+      font = getFont(seed * 5);
+  }
 
   $("body").css("font-family", font);
 
