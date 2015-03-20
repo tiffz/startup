@@ -61,9 +61,15 @@ var mainColors = ["#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71",
 									"#824C52", "#13326D", "#65CF13", "#9E0E2B"];
 
 var fonts = ["Gadget", "Helvetica", "Arial", "'Arial Black'",
-							"Impact", "Charcoal", "'Lucida Sans Unicode'", "'Lucida Grande'", 
+							"Charcoal", "'Lucida Sans Unicode'", "'Lucida Grande'", 
 							"Tahoma", "Geneva", "Verdana", "Roboto", "'Source Sans Pro'", 
-							"'Open Sans'", "Lato", "Oswald", "Lora"];
+							"'Open Sans'", "Lato", "Oswald", "Lora", "Nobile", "'Droid Serif'",
+							"'Droid Sans'", "Molengo", "Lekton", "Cardo", "'Josefin Sans'",
+							"Allerta", "'Crimson Text'"];
+
+var logoFonts = ["Impact", "Allan", "Corben"];
+
+var cursiveFonts = ["'Dancing Script'", "Lobster"];
 
 var fontAwesome = ["fa-adn", "fa-anchor", "fa-ambulance", "fa-archive", "fa-area-chart", 
 										"fa-asterisk", "fa-automobile", "fa-bank", "fa-bell", "fa-bicycle", 

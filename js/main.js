@@ -16,6 +16,7 @@ $(document).ready(function() {
   var subDescs = makeSubDescs(seed);
   var openerText = makeOpener(seed);
   var logo = getLogo(seed * 2);
+  var logoFont = getLogoFont(seed * 13);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
   accent = getColor(seed * 4);
   navTop = setAlpha(accent, 0);
@@ -24,7 +25,7 @@ $(document).ready(function() {
   var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
   	randomInt(seed * 5 + 2, 11, 1));
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
-  var headerFont = getFont(seed * 7);
+  var headerFont = getLogoFont(seed * 7);
   var font = getFont(seed * 11);
 
   if (slogan.length > 20) {
@@ -34,6 +35,8 @@ $(document).ready(function() {
   document.title = name ;
 
   $("body").css("font-family", font);
+  $("#logo").css("font-family", logoFont);
+
 
   $("#cover-heading").css("font-family", headerFont);
   $("#cover-heading").css("font-size", headerSize + "rem");

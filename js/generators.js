@@ -61,6 +61,15 @@ function getFont (seed) {
     return res;
 }
 
+function getLogoFont (seed) {
+    var f = someChoices(seed, fonts.concat(logoFonts), 5);
+    var res = f[0];
+    for (var i = 1; i < f.length; i++) {
+        res = res + ", " + f[i];
+    }
+    return res;
+}
+
 function getAlpha (seed, min, max) {
   if (!min) min = 0;
   if (!max) max = 1;
