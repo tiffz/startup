@@ -136,6 +136,27 @@
   font-size: 1.3em;
 }
 
+.col-md-7 {
+  text-align: center;
+  width: 100%;
+}
+
+.col-md-7 .lead{
+  text-align: left;
+  width: 100%;
+}
+
+.featurette {
+  width: 70%;
+  margin-left: 15%;
+}
+
+.featurette-heading {
+    font-size: 30px;
+    margin-top: 0px;
+    text-align: right;
+  }
+
 #cover-heading {
   font-size: 10rem;
   line-height: 0.85em;
@@ -150,3 +171,94 @@
   font-family: Roboto;
   letter-spacing: 0.5px;
 }
+
+footer {
+  margin-top: 20px;
+  padding: 50px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+#emailbox {
+  width: 50%;
+  text-align: center;
+  padding: 3px;
+  border-radius: 5px;
+  border: 3px solid;
+}
+
+input:focus {outline: none; }
+
+#signupbox {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 30px 120px;
+  font-family: Georgia, serif;
+  font-size: 240px;
+  font-style: italic;
+  color: #383838;
+  text-align: center;
+  margin-top: 30px;
+  border: 0px;
+}
+
+blockquote:before, blockquote:after {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 1;
+}
+blockquote:before {
+    top: 0;
+    left: 0;
+    content: "\201C";
+}
+blockquote:after {
+    top: 0;
+    right: 82px;
+    content: "\201D";
+}
+
+p {
+    margin-bottom: 30px;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+.backgroundcircle {
+  width: 140px;
+  height: 140px;
+  color: #fff;
+  background-color: #222;
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+  font-size: 90px;
+  padding-top: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

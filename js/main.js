@@ -29,6 +29,7 @@ $(document).ready(function() {
   var font = getFont(seed * 11);
   var customers = getPeople(seed * 8, 3);
   var testimonials = makeTest(seed, 3);
+  var icons = someChoices(seed * 9, fontAwesome, 3);
 
   if (slogan.length > 20) {
       headerSize = randomInt(seed * 11, 8, 4);
@@ -144,6 +145,8 @@ $(document).ready(function() {
   });
 
   $("#navigation").css("background", accent);
+  $("footer").css("background", "#333");
+  $("footer a").css("color", accent);
 	$("#logo").html(logo + " " + name);
   $("#cover-heading").html(slogan);
   $("#opener").html(openerText);
@@ -159,6 +162,12 @@ $(document).ready(function() {
   $("#test1").html(testimonials[0]);
   $("#test2").html(testimonials[1]);
   $("#test3").html(testimonials[2]);
-
-
+  $(".company-name").html(name);
+  $("#emailbox").css("font-family", font);
+  $("#emailbox").css("border-color", accent);
+  $(".backgroundcircle").css("background-color", accent);
+  $("#backgroundcircle").css("font-family", logoFont);
+  $("#icon1").html('<i class="fa ' + icons[0] + '"></i>');
+  $("#icon2").html('<i class="fa ' + icons[1] + '"></i>');
+  $("#icon3").html('<i class="fa ' + icons[2] + '"></i>');
 });
