@@ -87,7 +87,7 @@ var fontAwesome = ["fa-adn", "fa-anchor", "fa-ambulance", "fa-archive", "fa-area
 										"fa-music", "fa-pagelines", "fa-neuter", "fa-paint-brush", "fa-paper-plane", 
 										"fa-paper-plane-o", "fa-paw", "fa-pause", "fa-pie-chart", "fa-phone-square", 
 										"fa-plug", "fa-plus-square", "fa-plus-circle", "fa-power-off", "fa-puzzle-piece",
-										"fa-ra", "fa-renren", "fa-road", "fa-retweet", "fa-rocket", "fa-spoon", "fa-space-shuttle", 
+										"fa-renren", "fa-road", "fa-retweet", "fa-rocket", "fa-spoon", "fa-space-shuttle", 
 										"fa-street-view", "fa-sun-o", "fa-tachometer", "fa-tag", "fa-tags", "fa-th", "fa-th-large", 
 										"fa-thumb-tack", "fa-ticket", "fa-times-circle", "fa-times-circle-o", "fa-tint", 
 										"fa-tree", "fa-trophy", "fa-truck", "fa-umbrella", "fa-unsorted", "fa-wrench", "fa-ship", "fa-user-plus",
