@@ -16,7 +16,7 @@ function someChoices(seed, choices, n) {
     var newChoices = choices.slice();
     var results = [];
     while (n > 0) {
-        var index = Math.floor(random(seed + n) * newChoices.length);
+        var index = Math.floor(random(seed * n + n) * newChoices.length);
         results.push(newChoices[index]);
         newChoices.splice(index, 1);
         n--;
