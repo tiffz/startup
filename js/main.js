@@ -1,4 +1,4 @@
-var seed = Math.floor(Math.random() * 10000000000);
+var seed = Math.floor(Math.random() * 10000000000000000);
 
 var accent;
 var navTop;
@@ -83,7 +83,7 @@ $(document).ready(function() {
   	$("#home-text-wrapper").css("padding", "15px 0");
   }
 
-  if (seedChance(seed * 243 * 9, 0.4)) {
+  if (seedChance(seed * 243 * 9, 0.3)) {
   	// Generate a flat color
   	$("#home-content").css("background", accent);
   	if (seedChance(seed * 243 * 81, 0.6)) {
@@ -96,7 +96,7 @@ $(document).ready(function() {
   	$("#home .btn-default").css("background-color", darkenColor(accent, 40));
   } else {
   	// Generate an image
-	  var bgAlpha = getAlpha(seed * 243 * 27, 0.2, 0.6);
+	  var bgAlpha = getAlpha(seed * 243 * 27, 0.3, 0.6);
 	  var bgOverlay = "rgba(0, 0, 0, " + bgAlpha + ")";
 	  if (seedChance(seed * 3, 0.1)) {
 	    bgOverlay = "url('img/misc/diag/" + seedChoice(seed * 9, diagonals) + "')";

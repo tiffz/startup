@@ -64,12 +64,12 @@ var fonts = ["Gadget", "Helvetica", "Arial", "'Arial Black'",
 							"Charcoal", "'Lucida Sans Unicode'", "'Lucida Grande'", 
 							"Tahoma", "Geneva", "Verdana", "Roboto", "'Source Sans Pro'", 
 							"'Open Sans'", "Lato", "Oswald", "Lora", "Nobile", "'Droid Serif'",
-							"'Droid Sans'", "Molengo", "Lekton", "Cardo", "'Josefin Sans'",
+							"'Droid Sans'", "Molengo", "Cardo", "'Josefin Sans'",
 							"Allerta", "'Crimson Text'"];
 
-var logoFonts = ["Impact", "Allan", "Corben"];
+var logoFonts = ["Impact", "Allan"];
 
-var cursiveFonts = ["'Dancing Script'", "Lobster"];
+var cursiveFonts = ["'Dancing Script'", "Lobster", "Corben"];
 
 var fontAwesome = ["fa-adn", "fa-anchor", "fa-ambulance", "fa-archive", "fa-area-chart", 
 										"fa-asterisk", "fa-automobile", "fa-bank", "fa-bell", "fa-bicycle", 
