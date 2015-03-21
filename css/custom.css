@@ -215,13 +215,13 @@ blockquote:before, blockquote:after {
     line-height: 1;
 }
 blockquote:before {
-    top: 0;
+    top: -20px;
     left: 0;
     content: "\201C";
 }
 blockquote:after {
-    top: 0;
-    right: 82px;
+    top: 20px;
+    right: 11%;
     content: "\201D";
 }
 
