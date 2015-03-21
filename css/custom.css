@@ -62,10 +62,6 @@
   padding-top: 60px;
 }
 
-#home {
-  -webkit-transform: translate3d(0, 0, 0);
-}
-
 #home nav {
   box-shadow: none;
   z-index: 9999;
