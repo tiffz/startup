@@ -27,6 +27,8 @@ $(document).ready(function() {
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getLogoFont(seed * 7);
   var font = getFont(seed * 11);
+  var customers = getPeople(seed * 8, 3);
+  var testimonials = makeTest(seed, 3);
 
   if (slogan.length > 20) {
       headerSize = randomInt(seed * 11, 8, 4);
@@ -151,4 +153,12 @@ $(document).ready(function() {
   $("#subDesc1").html(subDescs[0].replace(/\*/g, subHeadings[0]).replace(/\+/g, subHeadingAdvbs[0]));
   $("#subDesc2").html(subDescs[1].replace(/\*/g, subHeadings[1]).replace(/\+/g, subHeadingAdvbs[1]));
   $("#subDesc3").html(subDescs[2].replace(/\*/g, subHeadings[2]).replace(/\+/g, subHeadingAdvbs[2]));
+  $("#name1").html(customers[0] + "<br><span class=\"text-muted\">" + makeTown(seed + 1) + "</span>");
+  $("#name2").html(customers[1] + "<br><span class=\"text-muted\">" + makeTown(seed + 2) + "</span>");
+  $("#name3").html(customers[2] + "<br><span class=\"text-muted\">" + makeTown(seed + 3) + "</span>");
+  $("#test1").html(testimonials[0]);
+  $("#test2").html(testimonials[1]);
+  $("#test3").html(testimonials[2]);
+
+
 });
