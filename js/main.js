@@ -39,7 +39,8 @@ $(document).ready(function() {
 
   $("body").css("font-family", font);
   $("#logo").css("font-family", logoFont);
-
+  $(".quote-row").css("background-color", darkenColor(accent, 50));
+  $(".text-muted").css("color", darkenColor(accent, -20));
 
   $("#cover-heading").css("font-family", headerFont);
   $("#cover-heading").css("font-size", headerSize + "rem");

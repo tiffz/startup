@@ -142,13 +142,25 @@
 }
 
 .col-md-7 .lead{
-  text-align: left;
   width: 100%;
+  font-size: 2.6rem;
+  text-align: left;
 }
 
 .featurette {
-  width: 70%;
-  margin-left: 15%;
+  width: 100%;
+  padding: 0 15%;
+}
+
+.quote-row {
+  margin: 0px;
+  color: #fff;
+  background: #333;
+}
+
+.quote-row blockquote {
+  text-align: center;
+  color: #fff;
 }
 
 .featurette-heading {
@@ -216,12 +228,12 @@ blockquote:before, blockquote:after {
 }
 blockquote:before {
     top: -20px;
-    left: 0;
+    left: -10px;
     content: "\201C";
 }
 blockquote:after {
-    top: 20px;
-    right: 11%;
+    top: -20px;
+    right: 10%;
     content: "\201D";
 }
 

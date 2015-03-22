@@ -64,7 +64,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#team">Our Team</a></li>
             <li><a href="#trynow">Try Now</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -88,7 +88,7 @@
   </div>
 
 
-      <div class="row featurette">
+      <div class="container row featurette quote-row" id="test1-cont">
         <div class="col-md-7">
           <blockquote><p class="lead" id="test1">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           <h2 class="featurette-heading" id="name1">First testimonial name. <span class="text-muted">First City</span></h2></blockquote>
@@ -97,7 +97,9 @@
 
   <div class="container marketing" id="about">
 
-      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <h2>Why <span class="company-name">Findr</span>?</h2>
+      </div>
       <div class="row">
         <div class="col-lg-4">
           <div class="backgroundcircle" id="icon1"></div>
@@ -116,11 +118,12 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
+    </div><!-- /.container -->
 
-      <!-- START THE FEATURETTES -->
+          <!-- START THE FEATURETTES -->
 
 
-      <div class="row featurette">
+   <div class="container row featurette quote-row" id="test2-cont">
         <div class="col-md-7">
           <blockquote><p class="lead" id="test2">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           <h2 class="featurette-heading" id="name2">Second testimonial name. <span class="text-muted">Second City</span></h2></blockquote>
@@ -129,9 +132,10 @@
 
       <!-- /END THE FEATURETTES -->
 
-    </div><!-- /.container -->
-
     <div class="container marketing" id="team">
+      <div class="row">
+        <h2>Meet the <span class="company-name">Findr</span> team</h2>
+      </div>
       <div class="row">
         <div class="col-lg-4 team">
           <img class="img-circle" src="img/team/m/1.jpg" alt="Juan Pablo Montoya">
@@ -167,15 +171,16 @@
     </div><!-- /.container -->
 
 
-      <div class="row featurette">
+      <div class="container row featurette quote-row" id="test3-cont">
         <div class="col-md-7">
           <blockquote><p class="lead" id="test3">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           <h2 class="featurette-heading" id="name3">Last testimonial name. <span class="text-muted">Last City</span></h2></blockquote>
         </div>
       </div>
 
-  <div id=trynow>
-    <form method="POST">
+  <div id="trynow" class="container">
+    <h2>Be the first to try out <span class="company-name">Company</span></h2>
+    <form method="post" action="about.html">
       <input type="text" id="emailbox" name="Email" placeholder="Your Email">
       <input class="btn btn-default" type="submit" value="Sign Up!">
     </form>
