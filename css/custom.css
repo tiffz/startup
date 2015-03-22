@@ -256,21 +256,6 @@ p:last-child {
   padding-top: 25px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.quote-row .text-muted {
+  color: #fff;
+}
