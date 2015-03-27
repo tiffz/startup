@@ -61,8 +61,12 @@ function getFont (seed) {
     return res;
 }
 
-function getLogoFont (seed) {
-    var f = someChoices(seed, fonts.concat(logoFonts), 5);
+function getLogoFont (seed, cursive) {
+    var data = fonts.concat(logoFonts);
+    if (cursive) {
+        data = data.concat(cursiveFonts);
+    }
+    var f = someChoices(seed, data, 5);
     var res = f[0];
     for (var i = 1; i < f.length; i++) {
         res = res + ", " + f[i];

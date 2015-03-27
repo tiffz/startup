@@ -2,6 +2,7 @@ var Startup = function (s) {
   var seed = s; 
   var name = startupify(seed);
   var accent = new Color(getColor(seed * 4));
+  accent = accent.deviate(seed * 97, 20);
 
   this.getName = function () {
     return name;
@@ -12,10 +13,34 @@ var Startup = function (s) {
   }
 
   this.styleLogo = function (cont, color) {
-    var logo = getLogo(seed * 2);
-    var logoFont = getLogoFont(seed * 13);
+    var logoSeed = seed * 2;
+    var logo = "";
+    if (seedChance(logoSeed * 7, 0.90)) {
+      logo = getLogo(logoSeed);
+    } 
 
+    var cursive = true;
+    if (seedChance(logoSeed * 5 + 18, 0.25)) {
+      $(cont).css("text-transform",  "lowercase");
+    } else if (seedChance(logoSeed  * 5 + 18, 0.35)) {
+      $(cont).css("text-transform",  "capitalize");
+    } else if (seedChance(logoSeed * 5 + 18, 0.45)) {
+      $(cont).css("text-transform",  "capitalize");
+      $(cont).css("font-variant",  "small-caps");
+    } else if (seedChance(logoSeed * 5 + 18, 0.95)) {
+      cursive = false;
+    }
+    var logoFont = getLogoFont(logoSeed * 13, cursive);
+    var fontSize = Math.max(randomInt(logoSeed * 17, 18, 13), 
+                      randomInt(logoSeed * 19, 20, 13));
+    var letterSpacing = randomInt(logoSeed * 23, 15, -15);
+    letterSpacing = letterSpacing / 10.0 + "px";
+    fontSize = fontSize / 10.0 + "em";
+
+    $(cont).css("font-weight", "heavy");
     $(cont).html(logo + " " + name);
+    $(cont).css("letter-spacing", letterSpacing);
+    $(cont).css("font-size", fontSize);
     $(cont).css("font-family", logoFont);
     if (color) {
       $(cont).css("color", accent.rgba());
@@ -54,6 +79,13 @@ var Color = function (color, alpha) {
   this.darken = function (amount, alpha) {
     if (!alpha) alpha = a;
     return new Color([r - amount, g - amount, b - amount], alpha);
+  }
+
+  this.deviate = function (seed, range) {
+    var newR = r + range - randomInt(seed, range);
+    var newG = g + range - randomInt(seed + 1, range);
+    var newB = b + range - randomInt(seed + 2, range);
+    return new Color([newR, newG, newB]);
   }
 
   this.hex = function () {

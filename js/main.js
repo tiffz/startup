@@ -98,7 +98,7 @@ $(document).ready(function() {
   	// Generate an image
 	  var bgAlpha = getAlpha(seed * 243 * 27, 0.3, 0.6);
 	  var bgOverlay = "rgba(0, 0, 0, " + bgAlpha + ")";
-	  if (seedChance(seed * 3, 0.1)) {
+	  if (seedChance(seed * 3, 0.03)) {
 	    bgOverlay = "url('img/misc/diag/" + seedChoice(seed * 9, diagonals) + "')";
 	  }
 
