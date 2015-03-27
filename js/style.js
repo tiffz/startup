@@ -8,7 +8,7 @@ $(document).ready(function(){
     if(scrollStart > offset.top) {
         $("#navigation").removeClass("top");
         $("#navigation").addClass("scrolled");
-        $("#navigation").css("background-color", setAlpha(accent, 1));
+        $("#navigation").css("background-color", accent.setAlpha(1).rgba());
         $("#navigation a").css("color", "#fff");
      } else {
         $("#navigation").removeClass("scrolled");
@@ -24,21 +24,3 @@ $(document).ready(function(){
 	   $(document).scroll(checkScroll);
    }
 });
-
-function setAlpha(color, alpha) {
-  return 'rgba(' + parseInt(color.slice(-6,-4),16) + ',' 
-          + parseInt(color.slice(-4,-2),16) + ',' 
-          + parseInt(color.slice(-2),16) + ', ' 
-          + alpha + ')';
-}
-
-function darkenColor(color, amount, alpha) {
-  if (!alpha) alpha = 1;
-  return 'rgba(' + zeroFloor(parseInt(color.slice(-6,-4),16) - amount) + ',' 
-          + zeroFloor(parseInt(color.slice(-4,-2),16) - amount) + ',' 
-          + zeroFloor(parseInt(color.slice(-2),16) - amount) + ', ' + alpha + ')';
-}
-
-function zeroFloor(num) {
-  return Math.max(num, 0);
-}

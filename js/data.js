@@ -69,7 +69,7 @@ var fonts = ["Gadget", "Helvetica", "Arial", "'Arial Black'",
 
 var logoFonts = ["Impact", "Allan"];
 
-var cursiveFonts = ["'Dancing Script'", "Lobster", "Corben"];
+var cursiveFonts = ["'Dancing Script'", "Lobster", "Corben", "'Kaushan Script'"];
 
 var fontAwesome = ["fa-adn", "fa-anchor", "fa-ambulance", "fa-archive", "fa-area-chart", 
 										"fa-asterisk", "fa-automobile", "fa-bank", "fa-bell", "fa-bicycle", 

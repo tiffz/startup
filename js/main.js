@@ -3,8 +3,9 @@ var seed = Math.floor(Math.random() * 10000000000000000);
 var accent;
 var navTop;
 var topColor = "#fff";
-
 $(document).ready(function() { 
+  var startup = new Startup(seed);
+
 	var name = startupify(seed);
   var bg = getBackground(seed + 1);
   
@@ -15,11 +16,9 @@ $(document).ready(function() {
   var subHeadingAdvbs = someChoices(seed, bizAdvbs, 3);
   var subDescs = makeSubDescs(seed);
   var openerText = makeOpener(seed);
-  var logo = getLogo(seed * 2);
-  var logoFont = getLogoFont(seed * 13);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
-  accent = getColor(seed * 4);
-  navTop = setAlpha(accent, 0);
+  accent = startup.getAccent();
+  navTop = accent.setAlpha(0).rgba();
   var headerSize = Math.max(randomInt(seed * 3 + 1, 12, 4), 
   	randomInt(seed * 3 + 2, 12, 4));
   var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
@@ -35,12 +34,12 @@ $(document).ready(function() {
       headerSize = randomInt(seed * 11, 8, 4);
   }
 
-  document.title = name ;
+  document.title = name;
 
   $("body").css("font-family", font);
-  $("#logo").css("font-family", logoFont);
-  $(".quote-row").css("background-color", darkenColor(accent, 50));
-  $(".text-muted").css("background-color", darkenColor(accent, -20));
+  startup.styleLogo("#logo");
+  $(".quote-row").css("background-color", accent.darken(50).rgba());
+  $(".text-muted").css("background-color", accent.darken(-20).rgba());
 
   $("#cover-heading").css("font-family", headerFont);
   $("#cover-heading").css("font-size", headerSize + "rem");
@@ -65,17 +64,17 @@ $(document).ready(function() {
 	}
 
 
-  $(".btn-default").css("background-color", accent);
+  $(".btn-default").css("background-color", accent.rgba());
 
   $("#home-text-wrapper").css("margin-top", "20px");
   if (navColoredAtTop) {
   	var navAlpha = getAlpha(seed * 243 * 243 * 9, 0.8, 1);
   	if (seedChance(seed * 243 * 243 * 3, 0.3)) {
-  		navTop = setAlpha(accent, navAlpha);
+  		navTop = accent.setAlpha(navAlpha).rgba();
   		topColor = "#ffffff";
   	} else {
   		navTop = setAlpha("#ffffff", navAlpha);
-  		topColor = darkenColor(accent, randomInt(seed * 243 * 243 * 27, 80), navAlpha);
+  		topColor = accent.darken(randomInt(seed * 243 * 243 * 27, 80), navAlpha).rgba();
   	}
   	$("#home-text-wrapper").css("margin-top", "50px");
   } else if (seedChance(seed * 243 * 9, 0.6)) {
@@ -86,15 +85,15 @@ $(document).ready(function() {
 
   if (seedChance(seed * 243 * 9, 0.3)) {
   	// Generate a flat color
-  	$("#home-content").css("background", accent);
+  	$("#home-content").css("background", accent.rgba());
   	if (seedChance(seed * 243 * 81, 0.6)) {
   		var bgAlpha = getAlpha(seed * 243 * 27, 0.4, 1);
   		// Overlay a subtle background on top
   		$("#home .before").css("background-image", "url('" + bg + "')");
-  		$("#home-content").css("background", setAlpha(accent, bgAlpha));
+  		$("#home-content").css("background", accent.setAlpha(bgAlpha).rgba());
   	}
 
-  	$("#home .btn-default").css("background-color", darkenColor(accent, 40));
+  	$("#home .btn-default").css("background-color", accent.darken(40).rgba());
   } else {
   	// Generate an image
 	  var bgAlpha = getAlpha(seed * 243 * 27, 0.3, 0.6);
@@ -145,10 +144,9 @@ $(document).ready(function() {
     }
   });
 
-  $("#navigation").css("background", accent);
+  $("#navigation").css("background", accent.rgba());
   $("footer").css("background", "#333");
-  $("footer a").css("color", accent);
-	$("#logo").html(logo + " " + name);
+  $("footer a").css("color", accent.rgba());
   $("#cover-heading").html(slogan);
   $("#opener").html(openerText);
   $("#subHeading1").html(capitalizeFirst(subHeadings[0]));
@@ -165,9 +163,9 @@ $(document).ready(function() {
   $("#test3").html(testimonials[2]);
   $(".company-name").html(name);
   $("#emailbox").css("font-family", font);
-  $("#emailbox").css("border-color", accent);
-  $(".backgroundcircle").css("background-color", accent);
-  $("#backgroundcircle").css("font-family", logoFont);
+  $("#emailbox").css("border-color", accent.rgba());
+  $(".backgroundcircle").css("background-color", accent.rgba());
+  $("#backgroundcircle").css("font-family", headerFont);
   $("#icon1").html('<i class="fa ' + icons[0] + '"></i>');
   $("#icon2").html('<i class="fa ' + icons[1] + '"></i>');
   $("#icon3").html('<i class="fa ' + icons[2] + '"></i>');
