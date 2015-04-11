@@ -23,4 +23,5 @@ $(document).ready(function(){
    if (startChange.length) {
 	   $(document).scroll(checkScroll);
    }
+  $("#body").css("display", "block");
 });

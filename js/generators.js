@@ -444,9 +444,22 @@ function makeTest (seed, n) {
     return someChoices(seed + 12, results, n);
 }
 
+function getSeedFromURL(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
-
-
+function ourSponsors(seed) {
+    var results = [];
+    results.push("Our Sponsors");
+    results.push("Our Clients");
+    results.push("Proudly Partenering With");
+    results.push("As Seen On");
+    results.push("Current Clients");
+    return seedChoice(seed + 13, results)
+}
 
 
 

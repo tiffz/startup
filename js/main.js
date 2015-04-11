@@ -1,8 +1,15 @@
-var seed = Math.floor(Math.random() * 10000000000000000);
-
+var seed = Math.floor(Math.random() * 1000000000000);
 var accent;
 var navTop;
 var topColor = "#fff";
+var currentSite = window.location.href;
+var gotSeed = getSeedFromURL('s');
+if (gotSeed == "") {
+  var newUrl = currentSite + "?s=" + seed;
+  location.href = newUrl;
+} else {
+  seed = parseInt(gotSeed);
+}
 $(document).ready(function() { 
   var startup = new Startup(seed);
 
@@ -45,6 +52,10 @@ $(document).ready(function() {
   $("#cover-heading").css("font-size", headerSize + "rem");
   $("#cover-heading").css("font-weight", headerWeight * 100);
   $("#cover-heading").css("letter-spacing", headerSpacing);
+
+  $(".modal-body").css("background-color", accent.darken(-20).rgba());
+  //$(".modal-header").css("background-color", accent.darken(50).rgba());
+  //$(".modal-footer").css("background-color", accent.darken(50).rgba());
 
   if (seedChance(seed * 3 + 17, 0.5)) {
   	$("#opener").css("font-weight", "bold");
@@ -144,6 +155,7 @@ $(document).ready(function() {
     }
   });
 
+
   $("#navigation").css("background", accent.rgba());
   $("footer").css("background", "#333");
   $("footer a").css("color", accent.rgba());
@@ -169,4 +181,33 @@ $(document).ready(function() {
   $("#icon1").html('<i class="fa ' + icons[0] + '"></i>');
   $("#icon2").html('<i class="fa ' + icons[1] + '"></i>');
   $("#icon3").html('<i class="fa ' + icons[2] + '"></i>');
+
+  //Changes the accent color to its complement in places.
+  if (seedChance(seed * 256 + 256, 0.1)) {
+    $(".quote-row").css("background-color", accent.complement().darken(50).rgba());
+    $("footer a").css("color", accent.complement().darken(10).rgba());
+  } else if (seedChance(seed * 256 + 256, 0.3)) {
+    $(".quote-row").css("background-color", accent.desaturate().rgba());
+    $("footer").css("background", accent.desaturate().rgba());
+  }
+
+  //Generate sponsor links
+  $("#sponsortitle").html(ourSponsors(seed));
+  var siteBase = currentSite.substring(0, currentSite.indexOf('?'));
+  sponsorSeed1 = Math.floor(seed * random(seed));
+  sponsorSeed2 = Math.floor(seed * random(seed * 2));
+  sponsorSeed3 = Math.floor(seed * random(seed * 3));
+  var sponsor1 = new Startup(sponsorSeed1);
+  $("#slogo1").html(sponsor1.getName);
+  $("#slink1").attr("href", siteBase + "?s=" + sponsorSeed1);
+  sponsor1.styleLogo("#slogo1");
+  var sponsor2 = new Startup(sponsorSeed2);
+  $("#slogo2").html(sponsor2.getName);
+  $("#slink2").attr("href", siteBase + "?s=" + sponsorSeed2);
+  sponsor2.styleLogo("#slogo2");
+  var sponsor3 = new Startup(sponsorSeed3);
+  $("#slogo3").html(sponsor3.getName);
+  $("#slink3").attr("href", siteBase + "?s=" + sponsorSeed3);
+  sponsor3.styleLogo("#slogo3");
+
 });

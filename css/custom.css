@@ -1,4 +1,5 @@
-.btn-default, .btn {
+.btn-default, .btn, 
+.btn-default:focus, .btn:focus {
   background-image: none;
   border: none;
   box-shadow: none;
@@ -7,8 +8,7 @@
 }
 
 .btn-default:hover, .btn:hover {
-  border: none;
-  background-color: #222;
+  box-shadow: none;
   color: #fff;
 }
 
@@ -108,7 +108,6 @@
 }
 
 #logo {
-  text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5em;
   letter-spacing: -0.5px;
@@ -185,7 +184,6 @@
 }
 
 footer {
-  margin-top: 20px;
   padding: 50px;
   padding-bottom: 40px;
   color: #fff;
@@ -244,6 +242,8 @@ p:last-child {
     margin-bottom: 0;
 }
 
+a:focus {outline:0 !important;}
+
 .backgroundcircle {
   width: 140px;
   height: 140px;
@@ -256,6 +256,38 @@ p:last-child {
   padding-top: 25px;
 }
 
+.slink:hover {
+  text-decoration: none;
+}
+
+.sponsor {
+  width: 30%;
+  display: inline;
+  padding: 5px;
+  margin: 20px;
+}
+
+#oursponsors {
+  margin-top: 30px;
+}
+
+#sponsorholder {
+  margin: 40px;
+}
+
 .quote-row .text-muted {
   color: #fff;
+}
+
+.modal {
+  z-index: 100000;
+}
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
 }

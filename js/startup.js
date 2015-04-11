@@ -17,7 +17,7 @@ var Startup = function (s) {
     var logo = "";
     if (seedChance(logoSeed * 7, 0.90)) {
       logo = getLogo(logoSeed);
-    } 
+    }
 
     var cursive = true;
     if (seedChance(logoSeed * 5 + 18, 0.25)) {
@@ -94,6 +94,18 @@ var Color = function (color, alpha) {
 
   this.rgba = function () { 
     return 'rgba(' + r + ',' + g + ',' + b + ', ' + a + ')';
+  }
+
+  this.complement = function () {
+    var newR = 255 - r;
+    var newG = 255 - g;
+    var newB = 255 - b;
+    return new Color([newR, newG, newB]);
+  }
+
+  this.desaturate = function () {
+    var avg = Math.floor((r + g + b) / 3);
+    return new Color([avg, avg, avg]);
   }
 
   function s (str, places) {
