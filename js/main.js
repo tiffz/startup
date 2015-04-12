@@ -1,5 +1,6 @@
 var seed = Math.floor(Math.random() * 1000000000000);
 var accent;
+var complement;
 var navTop;
 var topColor = "#fff";
 var currentSite = window.location.href;
@@ -25,6 +26,7 @@ $(document).ready(function() {
   var openerText = makeOpener(seed);
   var navColoredAtTop = seedChance(seed * 243 * 243, 0.3);
   accent = startup.getAccent();
+  complement = startup.getComplement();
   navTop = accent.setAlpha(0).rgba();
   var headerSize = Math.max(randomInt(seed * 3 + 1, 12, 4), 
   	randomInt(seed * 3 + 2, 12, 4));
@@ -74,10 +76,10 @@ $(document).ready(function() {
 		$("#cover-heading").css("font-variant",  "small-caps");
 	}
 
-
   $(".btn-default").css("background-color", accent.rgba());
 
   $("#home-text-wrapper").css("margin-top", "20px");
+  
   if (navColoredAtTop) {
   	var navAlpha = getAlpha(seed * 243 * 243 * 9, 0.8, 1);
   	if (seedChance(seed * 243 * 243 * 3, 0.3)) {
@@ -183,12 +185,12 @@ $(document).ready(function() {
   $("#icon3").html('<i class="fa ' + icons[2] + '"></i>');
 
   //Changes the accent color to its complement in places.
-  if (seedChance(seed * 256 + 256, 0.1)) {
-    $(".quote-row").css("background-color", accent.complement().darken(50).rgba());
-    $("footer a").css("color", accent.complement().darken(10).rgba());
-  } else if (seedChance(seed * 256 + 256, 0.3)) {
+  if (seedChance(seed * 256 + 256, .4)) {
+    $(".quote-row").css("background-color", complement.darken(50).rgba());
+    $("footer a").css("color", complement.darken(10).rgba());
+  } else if (seedChance(seed * 256 + 256, 0.6)) {
     $(".quote-row").css("background-color", accent.desaturate().rgba());
-    $("footer").css("background", accent.desaturate().rgba());
+    $("footer").css("background", complement.rgba());
   }
 
   //Generate sponsor links
