@@ -204,6 +204,10 @@ footer {
   color: #fff;
 }
 
+#trynow {
+  padding-bottom: 10px;
+}
+
 #emailbox {
   width: 50%;
   text-align: center;
@@ -311,3 +315,5 @@ ul.share-buttons li{
 #home-text-wrapper {
   width: 100%;
 }
+
+

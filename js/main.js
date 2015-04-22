@@ -183,22 +183,32 @@ $(document).ready(function() {
   $("#icon1").html('<i class="fa ' + icons[0] + '"></i>');
   $("#icon2").html('<i class="fa ' + icons[1] + '"></i>');
   $("#icon3").html('<i class="fa ' + icons[2] + '"></i>');
+  $("#bethefirst").text(beTheFirst(seed));
+  $("#trynow .btn-default").css("color", "#fff");
+  $(".sponsor").css("color", accent.rgba());
+
 
   //Changes the accent color to its complement in places.
-  if (seedChance(seed * 256 + 256, .4)) {
+  if (seedChance(seed * 256 + 256, .3)) {
     $(".quote-row").css("background-color", complement.darken(50).rgba());
-    $("footer a").css("color", complement.darken(10).rgba());
+    $("footer a").css("color", accent.rgba());
+    $("#trynow .btn-default").css("color", "#fff");
   } else if (seedChance(seed * 256 + 256, 0.6)) {
     $(".quote-row").css("background-color", accent.desaturate().rgba());
-    $("footer").css("background", complement.rgba());
+    $("footer").css("background", accent.rgba());
+    $("footer a").css("color", "#fff");
+    $("#trynow .btn-default").css("background-color", accent.darken(40).rgba());
+    $("#emailbox").css("border-color", accent.darken(40).rgba());
   }
+
+  $("#trynow form").css("color", accent.rgba());
 
   //Generate sponsor links
   $("#sponsortitle").html(ourSponsors(seed));
   var siteBase = currentSite.substring(0, currentSite.indexOf('?'));
-  sponsorSeed1 = Math.floor(seed * random(seed));
-  sponsorSeed2 = Math.floor(seed * random(seed * 2));
-  sponsorSeed3 = Math.floor(seed * random(seed * 3));
+  sponsorSeed1 = Math.floor(seed * random(seed + 1) + 1000);
+  sponsorSeed2 = Math.floor(seed * random(seed * 2 + 7) + 2000);
+  sponsorSeed3 = Math.floor(seed * random(seed * 3 + 9) + 3000);
   var sponsor1 = new Startup(sponsorSeed1);
   $("#slogo1").html(sponsor1.getName);
   $("#slink1").attr("href", siteBase + "?s=" + sponsorSeed1);
