@@ -4,7 +4,7 @@ var complement;
 var navTop;
 var topColor = "#fff";
 var currentSite = window.location.href;
-var gotSeed = getSeedFromURL('s');
+var gotSeed = getSeedFromURL();
 if (gotSeed == "") {
   var newUrl = currentSite + "?s=" + seed;
   location.href = newUrl;

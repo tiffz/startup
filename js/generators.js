@@ -613,11 +613,13 @@ function makeTest (seed, n) {
     return someChoices(seed + 12, results, n);
 }
 
-function getSeedFromURL(name) {
-    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+function getSeedFromURL() {
+    url = window.location.href;
+    var n = url.lastIndexOf('?s=');
+    if (n == -1 || isNaN(parseInt(url.substring(n + 3)))) {
+        return "";
+    }
+    return url.substring(n + 3);
 }
 
 function ourSponsors(seed) {
