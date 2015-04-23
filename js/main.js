@@ -221,5 +221,6 @@ $(document).ready(function() {
   $("#slogo3").html(sponsor3.getName);
   $("#slink3").attr("href", siteBase + "?s=" + sponsorSeed3);
   sponsor3.styleLogo("#slogo3");
+  $(".sponsor").css("font-size", "2.1em");
 
 });

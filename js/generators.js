@@ -421,12 +421,83 @@ function theMax (seed) {
     }
 }
 
+function anApp (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is a different kind of " + seedChoice(seed, nouns) + " app.";
+    } else {
+        return startupify(seed) + " is a different kind of " + seedChoice(seed, gerunds) + " app.";
+    }
+}
+
+function anApp (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is a different kind of " + seedChoice(seed, nouns) + " app.";
+    } else {
+        return startupify(seed) + " is a different kind of " + seedChoice(seed, gerunds) + " app.";
+    }
+}
+
+function builtBy (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return capitalizeFirst(seedChoice(seed + 3, inspVerbs)) + " your niche in the " + seedChoice(seed, nouns) + " ecosystem with online branding that’s built by " + seedChoice(seed + 1, bizAdjs) + " people for " + seedChoice(seed + 2, bizAdjs) + " consumers.";
+    } else {
+        return capitalizeFirst(seedChoice(seed + 3, inspVerbs)) + " your niche in the " + seedChoice(seed, gerunds) + " ecosystem with online branding that’s built by " + seedChoice(seed + 1, bizAdjs) + " people for " + seedChoice(seed + 2, bizAdjs) + " consumers.";
+    }
+}
+
+function intoCash (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is a " + seedChoice(seed + 7, bizAdjs) + " " + seedChoice(seed, nouns) + " service that makes it easy to turn your " + seedChoice(seed, plurals) + " into cash.";
+    } else {
+        return capitalizeFirst(seedChoice(seed + 7, inspVerbs)) + " & " + capitalizeFirst(seedChoice(seed, verbs)) + " together with your team.";
+    }
+}
+
+function weUse (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "We use " + seedChoice(seed, plurals) + " to " + seedChoice(seed + 43, inspVerbs) + " things that matter.";
+    } else {
+        return "We're " + seedChoice(seed, gerunds) + " to " + seedChoice(seed + 43, inspVerbs) + " things that matter.";
+    }
+}
+
+function gotBetter (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Buying " + seedChoice(seed, plurals) + " just got a whole lot better…";
+    } else {
+        return capitalizeFirst(seedChoice(seed, gerunds)) + " just got a whole lot better…";
+    }
+}
+
+function manageYour (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Manage your organisation's " + seedChoice(seed, plurals) + " online, with our cloud software.";
+    } else {
+        return "Manage your organisation's " + seedChoice(seed, gerunds) + " online, with our cloud software."
+    }
+}
+
+function worldsFirst (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return "Introducing the world’s first " + seedChoice(seed + 6543, bizAdjs) + " " + seedChoice(seed, nouns) + ".";
+    } else {
+        return "You like to " + seedChoice(seed, verbs) + ". " + startupify(seed) + " does too.";
+    }
+}
+
 function makeOpener (seed) {
     var results = [];
     results.push(isRevo(seed));
     results.push(isLocal(seed));
     results.push(shareAnd(seed));
     results.push(theMax(seed));
+    results.push(anApp(seed));
+    results.push(builtBy(seed));
+    results.push(intoCash(seed));
+    results.push(weUse(seed));
+    results.push(gotBetter(seed));
+    results.push(manageYour(seed));
+    results.push(worldsFirst(seed));
     return seedChoice(seed + 999, results);
 }
 
@@ -444,6 +515,27 @@ function makeSubDescs (seed) {
     results.push("Optimize your changes for a truly * impact.");
     results.push("Be the first to see * news in your area.");
     results.push(startupify(seed) + " is inherently * and community centric. It's time for the * community to have a voice.");
+    results.push("In this market, only the * survive." );
+    results.push("Worried about what happens next? We've got you covered.");
+    results.push("Find out what people are saying using our * tools.");
+    results.push("Say goodbye to spreadsheets forever.");
+    results.push("Share and collaborate with others inside and outside your organization.");
+    results.push("Turn Research into a Team Sport.");
+    results.push("Welcome to the next generation of * insight and engagement.");
+    results.push("Build * relationships with your customers.");
+    results.push("Cut through the clutter and get * results in a fresh & exciting way.");
+    results.push(startupify(seed) + " is easy to use, no matter who you are.");
+    results.push(startupify(seed) + " customers love the product and the company. We love them too!");
+    results.push("We provide 24x7x365 support with knowledgeable " + startupify(seed) + " staff answering your requests.");
+    results.push("Our * information gathering system completes the view of the customer.");
+    results.push("Found in * communities throughout the world.");
+    results.push("Discover 100% more * content.");
+    results.push("Your * workspace evolves your ideas into finished products.");
+    results.push("Simply * results for teams of all sizes.");
+    results.push("Our state-of-the-art technology keeps things *.");
+    results.push("Engage your customers with a * campaign.");
+    results.push(startupify(seed) + " is a simple and powerful tool that automatically organizes for * results.");
+    results.push("Finding a * fit just got a whole lot easier.");
     return someChoices(seed + 11, results, 3);
 }
 
@@ -480,6 +572,22 @@ function toLearn (seed) {
     }
 }
 
+function tinderFor (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is like Tinder... but for " + seedChoice(seed, plurals) + "!";
+    } else {
+        return startupify(seed) + " is like Tinder... but for " + seedChoice(seed, gerunds) + "!";
+    }
+}
+
+function facebookFor (seed) {
+    if (seedChoice(seed, nouns) == commonWord(seed)) {
+        return startupify(seed) + " is the Facebook of " + seedChoice(seed, plurals) + ".";
+    } else {
+        return startupify(seed) + " is the Facebook of " + seedChoice(seed, gerunds) + ".";
+    }
+}
+
 function makeTest (seed, n) {
     var results = [];
     results.push(startupify(seed) + " was " + seedChoice(seed + 4, bizAdjs) + ", " + seedChoice(seed + 5, bizAdjs) + ", and " + seedChoice(seed + 6, bizAdjs) + ". Ten out of ten!");
@@ -489,6 +597,19 @@ function makeTest (seed, n) {
     results.push("One of the biggest challenges we faced after we hit our early goals was how do we stay top-of-mind and keep our users engaged? Enter " + startupify(seed) + ". Problem solved.");
     results.push(forMe(seed));
     results.push(toLearn(seed));
+    results.push(startupify(seed) + " is the real deal. No doubt about it.");
+    results.push("Pure and simple. You guys have nailed it.");
+    results.push("I have to say this is probably the best platform I have seen of its kind.");
+    results.push("Definitely recommended.  Great experience, which gave us a better perspective and helped to solve several business problems.");
+    results.push(startupify(seed) + " was very useful not only in case of our project but just good basis for every business we would start in the future.");
+    results.push("You shouldn’t think about whether to apply - just do it! It’s an unique opportunity to meet awesome people and change the world!");
+    results.push("Once again, " + startupify(seed) + " came through. And even before estimated delivery date! Just impressive! Thank you! You’re awesome!");
+    results.push(startupify(seed) + " was excellent - especially relative to other services I tried - and certainly 1000x better than the experiences I had with other providers.");
+    results.push(tinderFor(seed));
+    results.push(facebookFor(seed));
+    results.push("I have to say I love this idea, it solved a big problem.");
+    results.push("It feels good to be part of the " + startupify(seed) + " family.");
+    results.push("We searched through a lot of providers and plans to find a good fit for our business. " + startupify(seed) + " made it easy to find the right fit for my business and my budget.");
     return someChoices(seed + 12, results, n);
 }
 
