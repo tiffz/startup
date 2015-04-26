@@ -94,6 +94,7 @@
     top: 0px;
     left: 0px;
     background: url('../img/bg/1.jpg') center fixed;
+    background-size: cover;
     z-index: 0;
 }
 
