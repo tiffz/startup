@@ -217,7 +217,10 @@ footer {
   border: 3px solid;
 }
 
-input:focus {outline: none; }
+input:focus {
+  outline: none; 
+}
+
 
 #signupbox {
   width: 100%;
@@ -281,20 +284,42 @@ a:focus {outline:0 !important;}
 }
 
 .sponsor {
-  width: 30%;
   display: inline;
   padding: 5px;
-  margin: 20px;
+  margin: 30px;
 }
 
-#oursponsors {
-  margin-top: 30px;
+#sponsortitle {
+  margin-bottom: 30px;
 }
 
 #sponsorholder {
-  margin: 40px;
+  margin: auto;
+  position: relative; left: 50%; float: left;
 }
 
+#sponsorinner {
+  position: relative; left: -50%; float: left;
+}
+
+#oursponsors {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#oursponsors .col-lg-4 {
+  width: auto;
+  padding: 0px;
+  margin: 20px 0px;
+}
+
+#oursponsors a {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+}
 
 .quote-row .text-muted {
   color: #fff;
