@@ -307,21 +307,22 @@ a:focus {outline:0 !important;}
   margin: 30px;
 }
 
-#sponsortitle {
-  margin-bottom: 30px;
-}
-
 #sponsorholder {
-  position: relative; left: 50%; float: left;
+  position: relative; 
+  left: 50%; 
+  float: left;
 }
 
 #sponsorinner {
-  position: relative; left: -50%; float: left;
+  position: relative; 
+  left: -50%; 
+  float: left;
 }
 
 #oursponsors {
   text-align: center;
   width: 100%;
+  padding-top: 30px;
   margin-top: 30px;
   margin-bottom: 80px;
 }
