@@ -320,6 +320,7 @@ a:focus {outline:0 !important;}
 }
 
 #oursponsors {
+  overflow-x: hidden;
   text-align: center;
   width: 100%;
   padding-top: 30px;
@@ -331,6 +332,12 @@ a:focus {outline:0 !important;}
   width: auto;
   padding: 0px;
   margin: 20px 0px;
+}
+
+#oursponsors a {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
 }
 
 .quote-row .text-muted {
