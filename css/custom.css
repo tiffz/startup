@@ -333,12 +333,6 @@ a:focus {outline:0 !important;}
   margin: 20px 0px;
 }
 
-#oursponsors a {
-  width: 100%;
-  text-align: center;
-  font-size: 1.6rem;
-}
-
 .quote-row .text-muted {
   color: #fff;
 }
