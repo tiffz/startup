@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .btn-default, .btn, 
 .btn-default:focus, .btn:focus {
   background-image: none;
@@ -10,6 +14,14 @@
 .btn-default:hover, .btn:hover {
   box-shadow: none;
   color: #fff;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+.row h2 {
+  padding-bottom: 20px;
 }
 
 #navigation {
@@ -169,6 +181,7 @@
 
 .quote-row {
   margin: 0px;
+  padding-bottom: 20px;
   color: #fff;
   background: #333;
 }
@@ -179,10 +192,10 @@
 }
 
 .featurette-heading {
-    font-size: 30px;
-    margin-top: 0px;
-    text-align: right;
-  }
+  font-size: 30px;
+  margin-top: 0px;
+  text-align: right;
+}
 
 #cover-heading {
   font-size: 10rem;
@@ -203,6 +216,11 @@ footer {
   padding: 50px;
   padding-bottom: 40px;
   color: #fff;
+}
+
+#signup {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 #trynow {
@@ -294,7 +312,6 @@ a:focus {outline:0 !important;}
 }
 
 #sponsorholder {
-  margin: auto;
   position: relative; left: 50%; float: left;
 }
 
@@ -306,7 +323,7 @@ a:focus {outline:0 !important;}
   text-align: center;
   width: 100%;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 
 #oursponsors .col-lg-4 {
