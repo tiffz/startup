@@ -20,7 +20,7 @@ body {
   padding-bottom: 80px;
 }
 
-.row h2 {
+.row > h2 {
   padding-bottom: 20px;
 }
 
@@ -337,7 +337,7 @@ a:focus {outline:0 !important;}
 #oursponsors a {
   width: 100%;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .quote-row .text-muted {
