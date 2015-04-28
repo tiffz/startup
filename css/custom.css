@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .btn-default, .btn, 
 .btn-default:focus, .btn:focus {
   background-image: none;
@@ -10,6 +14,14 @@
 .btn-default:hover, .btn:hover {
   box-shadow: none;
   color: #fff;
+}
+
+.container {
+  padding-bottom: 80px;
+}
+
+.row h2 {
+  padding-bottom: 20px;
 }
 
 #navigation {
@@ -169,6 +181,7 @@
 
 .quote-row {
   margin: 0px;
+  padding-bottom: 20px;
   color: #fff;
   background: #333;
 }
@@ -179,10 +192,10 @@
 }
 
 .featurette-heading {
-    font-size: 30px;
-    margin-top: 0px;
-    text-align: right;
-  }
+  font-size: 30px;
+  margin-top: 0px;
+  text-align: right;
+}
 
 #cover-heading {
   font-size: 10rem;
@@ -205,6 +218,11 @@ footer {
   color: #fff;
 }
 
+#signup {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
 #trynow {
   padding-bottom: 10px;
 }
@@ -217,7 +235,10 @@ footer {
   border: 3px solid;
 }
 
-input:focus {outline: none; }
+input:focus {
+  outline: none; 
+}
+
 
 #signupbox {
   width: 100%;
@@ -281,20 +302,41 @@ a:focus {outline:0 !important;}
 }
 
 .sponsor {
-  width: 30%;
   display: inline;
   padding: 5px;
-  margin: 20px;
+  margin: 30px;
 }
 
-#oursponsors {
-  margin-top: 30px;
+#sponsortitle {
+  margin-bottom: 30px;
 }
 
 #sponsorholder {
-  margin: 40px;
+  position: relative; left: 50%; float: left;
 }
 
+#sponsorinner {
+  position: relative; left: -50%; float: left;
+}
+
+#oursponsors {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+#oursponsors .col-lg-4 {
+  width: auto;
+  padding: 0px;
+  margin: 20px 0px;
+}
+
+#oursponsors a {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+}
 
 .quote-row .text-muted {
   color: #fff;
