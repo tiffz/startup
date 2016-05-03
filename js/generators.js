@@ -216,6 +216,7 @@ function startupify (seed) {
     var results = [];
     results.push(commonWord(seed) + "r");
     results.push(commonWord(seed) + "it");
+    results.push(commonWord(seed) + "io");
     results.push(commonWord(seed) + "ly");
     results.push(commonWord(seed) + "ify");
     results.push(commonWord(seed) + "hub");
