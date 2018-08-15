@@ -11,12 +11,15 @@ if (gotSeed == "") {
 } else {
   seed = parseInt(gotSeed);
 }
-$(document).ready(function() { 
+$(document).ready(function() {
+  while (realStartupsThatAskedToBeRemoved.includes(startupify(seed).toLowerCase())) {
+    seed++;
+  }
   var startup = new Startup(seed);
 
 	var name = startupify(seed);
   var bg = getBackground(seed + 1);
-  
+
   var shadowAlpha = getAlpha(seed + 3, 0.3, 0.8);
   var shadowSize = randomInt(seed + 4, 300, 50);
   var slogan = makeSlogan(seed);
@@ -28,9 +31,9 @@ $(document).ready(function() {
   accent = startup.getAccent();
   complement = startup.getComplement();
   navTop = accent.setAlpha(0).rgba();
-  var headerSize = Math.max(randomInt(seed * 3 + 1, 12, 4), 
+  var headerSize = Math.max(randomInt(seed * 3 + 1, 12, 4),
   	randomInt(seed * 3 + 2, 12, 4));
-  var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1), 
+  var headerWeight = Math.max(randomInt(seed * 5 + 1, 11, 1),
   	randomInt(seed * 5 + 2, 11, 1));
   var headerSpacing = randomInt(seed * 5 + 2, 40, -40) / 10;
   var headerFont = getLogoFont(seed * 7);
@@ -79,7 +82,7 @@ $(document).ready(function() {
   $(".btn-default").css("background-color", accent.rgba());
 
   $("#home-text-wrapper").css("margin-top", "20px");
-  
+
   if (navColoredAtTop) {
   	var navAlpha = getAlpha(seed * 243 * 243 * 9, 0.8, 1);
   	if (seedChance(seed * 243 * 243 * 3, 0.3)) {
@@ -124,9 +127,9 @@ $(document).ready(function() {
 
 	  if (seedChance(seed * 243, 0.1)) {
 	  	var blur = randomInt(seed * 243 * 3, 0, 8);
-	  	$("#home .before").css("filter", 
+	  	$("#home .before").css("filter",
 	  		$("#home .before").css("filter") + " blur(" + blur + "px)");
-	  	$("#home .before").css("-webkit-filter", 
+	  	$("#home .before").css("-webkit-filter",
 	  		$("#home .before").css("-webkit-filter") +  " blur(" + blur + "px)");
 	  }
 

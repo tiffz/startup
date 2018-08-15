@@ -1,5 +1,8 @@
 var Startup = function (s) {
-  var seed = s; 
+  var seed = s;
+  while (realStartupsThatAskedToBeRemoved.includes(startupify(seed).toLowerCase())) {
+    seed++;
+  }
   var name = startupify(seed);
   var accent = new Color(getColor(seed * 4));
   accent = accent.deviate(seed * 97, 20);
@@ -36,7 +39,7 @@ var Startup = function (s) {
       cursive = false;
     }
     var logoFont = getLogoFont(logoSeed * 13, cursive);
-    var fontSize = Math.max(randomInt(logoSeed * 17, 18, 13), 
+    var fontSize = Math.max(randomInt(logoSeed * 17, 18, 13),
                       randomInt(logoSeed * 19, 20, 13));
     var letterSpacing = randomInt(logoSeed * 23, 15, -15);
     letterSpacing = letterSpacing / 10.0 + "px";
@@ -72,7 +75,7 @@ var Color = function (color, alpha) {
   r = zeroFloor(r);
   g = zeroFloor(g);
   b = zeroFloor(b);
-  
+
   if (alpha != undefined) {
     a = alpha;
   }
@@ -97,7 +100,7 @@ var Color = function (color, alpha) {
     return "#" + s(r.toString(16), 2) + s(g.toString(16), 2) + s(b.toString(16), 2);
   }
 
-  this.rgba = function () { 
+  this.rgba = function () {
     return 'rgba(' + r + ',' + g + ',' + b + ', ' + a + ')';
   }
 
