@@ -165,14 +165,14 @@ function getTeam (seed) {
     while (m < guyCount || f < girlCount) {   
         if (random(seed * mult + 1) > 0.5 && f < girlCount) {
             // Add the next girl
-            var name = femaleName(seed * mult) + " " + lastName(seed * mult + 2);
+            var name = femaleName(seed * mult);
             var photo = femaleRoot + girls[f];
             var job = jobs[m + f];
             results.push({'name': name, 'photo': photo, 'job': job});
             f++;
         } else if (m < guyCount) {
             // Add the next guy
-            var name = maleName(seed * mult) + " " + lastName(seed * mult + 2);
+            var name = maleName(seed * mult);
             var photo = maleRoot + guys[m];
             var job = jobs[m + f];
             results.push({'name': name, 'photo': photo, 'job': job});
@@ -187,8 +187,8 @@ function getPeople (seed, n) {
     var results = [];
     var i = n;
     while (i > 0) {
-        results.push(femaleName(seed * i + 1) + " " + lastName(seed * i + 2));
-        results.push(femaleName(seed * i + 3) + " " + lastName(seed * i + 4));
+        results.push(maleName(seed * i + 1));
+        results.push(femaleName(seed * i + 3));
         i--;
     }
     return someChoices(seed + 5, results, n);
@@ -355,7 +355,13 @@ function maleName (seed) {
         total -= maleWeights[i];
         i++
     }
-    return maleNames[i];
+    var name = maleNames[i] + " " + lastName(seed + 2);
+    console.log(name);
+    console.log(realPeopleThatAskedToBeRemoved);
+    if (realPeopleThatAskedToBeRemoved.includes(name.toLowerCase())) {
+        return maleName(seed + 1);
+    }
+    return name;
 }
 
 function femaleName (seed) {
@@ -365,7 +371,11 @@ function femaleName (seed) {
         total -= femaleWeights[i];
         i++
     }
-    return femaleNames[i];
+    var name = femaleNames[i] + " " + lastName(seed + 2);
+    if (realPeopleThatAskedToBeRemoved.includes(name.toLowerCase())) {
+        return femaleName(seed + 1);
+    }
+    return name;
 }
 
 function lastName (seed) {
