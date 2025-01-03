@@ -6,7 +6,7 @@ var maleRootBig = "img/team/m/big";
 
 var realStartupsThatAskedToBeRemoved = ["trustify"]; // Remember to use lowercase
 
-var realPeopleThatAskedToBeRemoved = ["danielle dentz", "dannielle dentz"]; // Remember to use lowercase
+var realPeopleThatAskedToBeRemoved = ["danielle dentz", "dannielle dentz", "megan tonkovich"]; // Remember to use lowercase
 
 var diagonals = ["1.png", "2.png", "3.png", "4.png", "5.png"];
 
