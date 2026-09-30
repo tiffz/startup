@@ -251,11 +251,10 @@
       </footer>
 
 <!-- Google Analytics 4.
-     This replaced the Universal Analytics snippet, which had stopped working.
-     Google decommissioned UA collection: www.google-analytics.com/analytics.js
-     now returns an EMPTY FILE, so `ga('send', 'pageview')` queued into an array
-     that nothing ever drained. The tag looked present in the page source and
-     had been recording nothing since early September 2026. -->
+     This replaced the Universal Analytics snippet (UA-53388207-2). Universal
+     Analytics stopped processing data on 1 July 2023: the snippet still ran
+     and the library is still served, so the page looked instrumented, but
+     standard UA properties have not accepted a hit since. -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-25C3B5B84M"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

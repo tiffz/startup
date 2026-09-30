@@ -119,13 +119,18 @@ does that, remember the second step.
 The page sends to Google Analytics 4, measurement ID `G-25C3B5B84M` — the
 `tiffzhang.com` data stream.
 
-It previously used Universal Analytics (`UA-53388207-2`), which **silently
-stopped working**. Google decommissioned UA collection and
-`www.google-analytics.com/analytics.js` now returns an empty file, so
-`ga('send', 'pageview')` pushed into a queue that nothing ever drained. The tag
-was still there in the page source, looking fine, recording nothing. If you
-ever wonder whether a tag works, watch the network for a `/g/collect` request
-rather than reading the HTML.
+It previously used Universal Analytics (`UA-53388207-2`). **Universal
+Analytics stopped processing data on 1 July 2023.** The `analytics.js` library
+is still served, and the snippet still ran without error, so the page looked
+instrumented — but standard UA properties have not accepted a hit in years.
+That is the trap: a tag that is present and silent looks exactly like a tag
+that is working.
+
+If you ever want to know whether a tag is live, watch the network for a
+`/g/collect` request and check its `tid`. Do not infer it from the page
+source, and be careful inferring it from a sandboxed environment either —
+some block `www.google-analytics.com` outright, which looks identical to a
+dead tag.
 
 One configuration detail is specific to this app. Because every visit has a
 unique `?s=` seed, GA4 would otherwise record a separate page path per visitor
