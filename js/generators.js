@@ -356,8 +356,6 @@ function maleName (seed) {
         i++
     }
     var name = maleNames[i] + " " + lastName(seed + 2);
-    console.log(name);
-    console.log(realPeopleThatAskedToBeRemoved);
     if (realPeopleThatAskedToBeRemoved.includes(name.toLowerCase())) {
         return maleName(seed + 1);
     }
