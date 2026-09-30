@@ -148,6 +148,46 @@ To see `startup_seed` in reports it has to be registered once in GA4:
 **Admin → Custom definitions → Create custom dimension**, scope Event,
 parameter `startup_seed`.
 
+### The numbers before October 2026 are not real
+
+The property this stream belongs to recorded ~33 million users in a month,
+with a vertical cliff to zero on 8 September 2026. None of it was this site.
+
+It cannot have been. There was no mechanism: Universal Analytics stopped
+processing in July 2023, there was no GA4 tag on the page until this repo got
+one, and the stream's **connected site tags count is 0**, so the old UA tag was
+never forwarding either.
+
+It was **ghost spam**. A GA4 measurement ID has to be public — it ships in
+client-side code — and anyone can POST to Google's collect endpoint with it
+without ever visiting the site. The tell is in the shape: active users exactly
+equal to new users (every hit a fresh random client ID, nobody ever returns),
+about three events each, no key events, and an abrupt stop when the campaign
+moved on.
+
+**You cannot block this.** Hostname, referrer, country and landing page are
+just fields in the payload, and the sender fills them in. GA4 added a hostname
+data filter in June 2026, and it is worth turning on, but Google's own
+documentation says include filters are **not applied to Measurement Protocol
+events** — which is precisely what ghost spam uses.
+
+What actually works:
+
+- **Read reports through the `Hostname` dimension.** Add it as a secondary
+  dimension or pin an Exploration to it. Lazy spam forges nothing and is
+  obvious; careful spam forges your hostname and is not, so this is a filter,
+  not a guarantee.
+- **Delete the contaminated range** if it is skewing comparisons: Admin → Data
+  collection and modification → **Data deletion request**. Takes 7 to 63 days,
+  only works on data more than 12 days old, and there is a 7-day window to
+  cancel.
+- **A fresh measurement ID buys quiet**, because spam lists are scraped. It is
+  temporary, not a fix.
+
+The practical consequence: the first honest traffic number this site has had
+since 2023 is the one starting from the day this tag shipped. Expect it to be
+much smaller, and trust it more.
+
 ## Making a change
 
 1. Run it locally and reload a few times — the output is random, so one look
