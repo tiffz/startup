@@ -250,14 +250,29 @@
         <p><a href="#">Back to top</a></p>
       </footer>
 
+<!-- Google Analytics 4.
+     This replaced the Universal Analytics snippet, which had stopped working.
+     Google decommissioned UA collection: www.google-analytics.com/analytics.js
+     now returns an EMPTY FILE, so `ga('send', 'pageview')` queued into an array
+     that nothing ever drained. The tag looked present in the page source and
+     had been recording nothing since early September 2026. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-25C3B5B84M"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-53388207-2', 'auto');
-  ga('send', 'pageview');
+  /* The generator renders one random startup per page load and puts the seed
+     in the URL, so every visit has a unique query string. Left alone, GA4
+     would record a million distinct page paths and no page would ever show
+     more than one view. `page_location` is pinned to the path so the report
+     counts visits to the generator rather than to each seed; the seed itself
+     rides along as its own parameter, which keeps it available without
+     fragmenting the page report. */
+  gtag('config', 'G-25C3B5B84M', {
+    page_location: window.location.origin + window.location.pathname,
+    startup_seed: new URLSearchParams(window.location.search).get('s') || 'none'
+  });
 </script>
 
 </body>
